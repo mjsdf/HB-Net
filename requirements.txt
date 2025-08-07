@@ -1,0 +1,17 @@
+pyyaml>=5.4.0
+easydict
+TensorBoardX
+tensorboard
+opencv-python
+scipy
+sklearn
+scikit-image
+einops
+h5py
+
+
+
+pip install scikit-learn （注意：一般习惯用 scikit-learn 全称来安装，sklearn 是导入时常用的别名 ）
+pip install scikit-image
+pip install einops
+系统内部异常：从你提供的网页报错信息来看，在下载部分依赖包时，对应的网页出现 “系统内部异常，请稍后重试” 的报错。虽然本次安装过程中这些包似乎成功下载并安装了，但可能存在潜在风险。如果后续使用过程中出现问题，可以尝试重新安装相关包，或者更换下载源（例如使用官方源https://pypi.org/simple ）重新安装tensorboard及其依赖，命令如下：pip install -i https://pypi.org/simple tensorboard。
