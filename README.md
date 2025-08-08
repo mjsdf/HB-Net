@@ -7,9 +7,9 @@
 - **Author Information**: 
   - First Author：Peigang Liu,School of Computer Science and Technology, China University of Petroleum (East China), Qingdao 266580, China,
   - Corresponding Author：Peigang Liu
-  - Other Authors:：Jing Ma, Chaozhi Yang, Honghao Dong, Peijie Wang, Zongmin Li (arranged in the order of authors in the paper)
+  - Other Authors: Jing Ma, Chaozhi Yang, Honghao Dong, Peijie Wang, Zongmin Li (arranged in the order of authors in the paper)
 - **Open Source License**: [MIT License](https://github.com/mjsdf/HB-Net/blob/main/LICENSE)(see the LICENSE file in the root directory of the project for details)
-- **Code Repository Address:**: https://github.com/mjsdf/HB-Net
+- **Code Repository Address**: https://github.com/mjsdf/HB-Net
 
 ## Project Overview
 This project implements a semi-supervised learning-based semantic segmentation model (HB-Net), which is built on the UNet architecture and integrated with the UniMatch semi-supervised framework. It can efficiently handle semantic segmentation tasks in scenarios with limited annotated data (such as crack detection in geological images). The code supports distributed training and includes complete modules for dataset processing, model training, performance validation, and result testing, featuring excellent reproducibility, scalability, and maintainability.
