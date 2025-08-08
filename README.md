@@ -1,63 +1,113 @@
-# HB-Net
-一、标题写法：
-第一种方法：
-1、在文本下面加上 等于号 = ，那么上方的文本就变成了大标题。等于号的个数无限制，但一定要大于0个哦。。
-2、在文本下面加上 下划线 - ，那么上方的文本就变成了中标题，同样的 下划线个数无限制。
-3、要想输入=号，上面有文本而不让其转化为大标题，则需要在两者之间加一个空行。
-另一种方法：（推荐这种方法；注意⚠️中间需要有一个空格）
-关于标题还有等级表示法，分为六个等级，显示的文本大小依次减小。不同等级之间是以井号  #  的个数来标识的。一级标题有一个 #，二级标题有两个# ，以此类推。
-例如：
-# 一级标题  
-## 二级标题  
-### 三级标题  
-#### 四级标题  
-##### 五级标题  
-###### 六级标题 
-二、编辑基本语法  
-1、字体格式强调
- 我们可以使用下面的方式给我们的文本添加强调的效果
-*强调*  (示例：斜体)  
- _强调_  (示例：斜体)  
-**加重强调**  (示例：粗体)  
- __加重强调__ (示例：粗体)  
-***特别强调*** (示例：粗斜体)  
-___特别强调___  (示例：粗斜体)  
-2、代码  
-`<hello world>`  
-3、代码块高亮  
+# HB-Net：Semi-Supervised Micro-Pore Segmentation for Heterogeneous Shale SEM Images
+
+## Basic Project Information
+
+- **Program Name**: HB-Net
+- **Paper Title**: Semi-Supervised Micro-Pore Segmentation for Heterogeneous Shale SEM Images
+- **Author Information**: 
+  - First Author：Peigang Liu,School of Computer Science and Technology, China University of Petroleum (East China), Qingdao 266580, China,
+  - Corresponding Author：Peigang Liu
+  - Other Authors:：Jing Ma, Chaozhi Yang, Honghao Dong, Peijie Wang, Zongmin Li (arranged in the order of authors in the paper)
+- **Open Source License**: MIT License(see the LICENSE file in the root directory of the project for details)
+- **Code Repository Address:**: https://github.com/mjsdf/HB-Net
+
+## Project Overview
+This project implements a semi-supervised learning-based semantic segmentation model (HB-Net), which is built on the UNet architecture and integrated with the UniMatch semi-supervised framework. It can efficiently handle semantic segmentation tasks in scenarios with limited annotated data (such as crack detection in geological images). The code supports distributed training and includes complete modules for dataset processing, model training, performance validation, and result testing, featuring excellent reproducibility, scalability, and maintainability.
+<p align="left">
+<img src="./docs/framework.png" width=90% height=90% 
+class="center">
+</p>
+
+## Environmental Dependencies
+
+### Basic Environment
+- Operating System：Linux / Windows 10+
+- Python Version：3.7+
+
+### Installation
+```bash
+cd HBNet
+conda create -n hbnet python=3.10.4
+conda activate hbnet
+pip install -r requirements.txt
+pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 -f https://download.pytorch.org/whl/torch_stable.html
 ```
-@Override
-protected void onDestroy() {
-    EventBus.getDefault().unregister(this);
-    super.onDestroy();
+
+## Instruction guide
+### 1.Data preparation  
+#### Dataset Structure  
+The data should be organized according to the following directory structure (taking pore segmentation as an example):
+```
+data/
+├── images/       
+│   ├── img_001.png
+│   ├── img_002.png
+│   └── ...
+└── labels/          
+    ├── img_001.png
+    ├── img_002.png
+    └── ...
+splits/
+├──train/
+│   ├── labeled.txt  
+│   ├── unlabeled.txt
+├── train.txt
+└── val.txt      
+```
+Note that the format of each line in the txt file is: images/img_001.png labels/img_001.png
+
+#### Configuration File  
+Create or modify the configuration file in the configs/ directory, as shown in the example below:
+```
+# arguments for dataset
+dataset: liefeng2
+nclass: 2
+crop_size: 420
+data_root: "./Data/liefeng2"
+
+# arguments for training
+epochs:  80
+batch_size: 3 
+lr: 0.005
+lr_multi: 10.0
+
+criterion: 
+  name: OHEM 
+  kwargs: 
+    ignore_index: 255 
+    thresh: 0.80 
+    min_kept: 90000 
+conf_thresh: 0.80 
+
+# arguments for model
+model: unet
+backbone: False
+```
+
+### 2.Model training  
+Use the unimatch.py script for semi-supervised training
+```
+# use torch.distributed.launch
+sh scripts/train.sh <num_gpu> <port>
+
+# or use slurm
+# sh scripts/slurm_train.sh <num_gpu> <port> <partition>
+```
+Note：Some of the model's training logs have been uploaded to the "exp" folder, which can be used as a reference.
+
+### 3.Model validation  
+Use the val.py script to evaluate model performance on the validation set and generate prediction results (you need to specify the model path and configuration file in the script)：
+```
+python val.py
+```
+
+## Citation
+Our method is implemented based on UniMatch.
+```
+@inproceedings{unimatch,
+  title={Revisiting Weak-to-Strong Consistency in Semi-Supervised Semantic Segmentation},
+  author={Yang, Lihe and Qi, Lei and Feng, Litong and Zhang, Wayne and Shi, Yinghuan},
+  booktitle={CVPR},
+  year={2023}
 }
-```  
-4、表格 （建议在表格前空一行，否则可能影响表格无法显示）
- 
- 表头  | 表头  | 表头
- ---- | ----- | ------  
- 单元格内容  | 单元格内容 | 单元格内容 
- 单元格内容  | 单元格内容 | 单元格内容  
- 
-5、其他引用
-图片  
-![图片名称](https://www.baidu.com/img/bd_logo1.png)  
-链接  
-[链接名称](https://www.baidu.com/)    
-6、列表 
-1. 项目1  
-2. 项目2  
-3. 项目3  
-   * 项目1 （一个*号会显示为一个黑点，注意⚠️有空格，否则直接显示为*项目1） 
-   * 项目2   
- 
-7、换行（建议直接在前一行后面补两个空格）
-直接回车不能换行，  
-可以在上一行文本后面补两个空格，  
-这样下一行的文本就换行了。
-或者就是在两行文本直接加一个空行。
-也能实现换行效果，不过这个行间距有点大。  
- 
-8、引用
-> 第一行引用文字  
-> 第二行引用文字   
+```
