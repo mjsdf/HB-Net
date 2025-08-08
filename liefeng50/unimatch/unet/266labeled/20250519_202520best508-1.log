@@ -1,0 +1,1011 @@
+/root/miniconda3/envs/unimatch/lib/python3.10/site-packages/torch/distributed/launch.py:178: FutureWarning: The module torch.distributed.launch is deprecated
+and will be removed in future. Use torchrun.
+Note that --use_env is set by default in torchrun.
+If your script expects `--local_rank` argument to be set, please
+change it to read from `os.environ['LOCAL_RANK']` instead. See 
+https://pytorch.org/docs/stable/distributed.html#launch-utility for 
+further instructions
+
+  warnings.warn(
+[2025-05-19 20:25:22,402][    INFO] {'backbone': 'xception',
+ 'batch_size': 3,
+ 'conf_thresh': 0.8,
+ 'config': 'configs/liefeng50.yaml',
+ 'criterion': {'kwargs': {'ignore_index': 255,
+                          'min_kept': 90000,
+                          'thresh': 0.8},
+               'name': 'OHEM'},
+ 'crop_size': 420,
+ 'data_root': './Data/liefeng2',
+ 'dataset': 'liefeng50',
+ 'dilations': [6, 12, 18],
+ 'epochs': 80,
+ 'labeled_id_path': 'splits/liefeng50/266labeled/labeled.txt',
+ 'local_rank': 0,
+ 'lr': 0.005,
+ 'lr_multi': 10.0,
+ 'model': 'unet',
+ 'nclass': 2,
+ 'ngpus': 1,
+ 'port': 15020,
+ 'replace_stride_with_dilation': [False, False, True],
+ 'save_path': 'exp/liefeng50/unimatch/unet/266labeled',
+ 'unlabeled_id_path': 'splits/liefeng50/266labeled/unlabeled.txt'}
+
+[2025-05-19 20:25:22,428][    INFO] Total params: 1.8M
+
+[2025-05-19 20:25:24,414][    INFO] ===========> Epoch: 0, LR: 0.00500, Previous best: 0.00
+[2025-05-19 20:25:28,556][    INFO] Iters: 0, Total loss: 0.349, Loss x: 0.696, Loss s: 0.003, Loss w_fp: 0.002,  Loss contrast: 0.000, Mask ratio: 0.006
+[2025-05-19 20:25:29,998][    INFO] Iters: 11, Total loss: 0.269, Loss x: 0.511, Loss s: 0.028, Loss w_fp: 0.027,  Loss contrast: 0.000, Mask ratio: 0.138
+[2025-05-19 20:25:31,634][    INFO] Iters: 22, Total loss: 0.246, Loss x: 0.435, Loss s: 0.052, Loss w_fp: 0.063,  Loss contrast: 0.000, Mask ratio: 0.535
+[2025-05-19 20:25:33,245][    INFO] Iters: 33, Total loss: 0.233, Loss x: 0.415, Loss s: 0.046, Loss w_fp: 0.056,  Loss contrast: 0.000, Mask ratio: 0.683
+[2025-05-19 20:25:34,777][    INFO] Iters: 44, Total loss: 0.222, Loss x: 0.399, Loss s: 0.040, Loss w_fp: 0.050,  Loss contrast: 0.000, Mask ratio: 0.756
+[2025-05-19 20:25:36,359][    INFO] Iters: 55, Total loss: 0.221, Loss x: 0.401, Loss s: 0.037, Loss w_fp: 0.045,  Loss contrast: 0.000, Mask ratio: 0.797
+[2025-05-19 20:25:37,848][    INFO] Iters: 66, Total loss: 0.209, Loss x: 0.381, Loss s: 0.035, Loss w_fp: 0.041,  Loss contrast: 0.000, Mask ratio: 0.823
+[2025-05-19 20:25:39,357][    INFO] Iters: 77, Total loss: 0.205, Loss x: 0.374, Loss s: 0.033, Loss w_fp: 0.040,  Loss contrast: 0.000, Mask ratio: 0.843
+[2025-05-19 20:25:40,850][    INFO] Iters: 88, Total loss: 0.195, Loss x: 0.354, Loss s: 0.032, Loss w_fp: 0.039,  Loss contrast: 0.000, Mask ratio: 0.860
+[2025-05-19 20:26:29,364][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.47,IoU1:98.47
+[2025-05-19 20:26:29,364][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 33.59,IoU1:32.57
+[2025-05-19 20:26:29,364][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 66.03, MeanIoU1: 65.52
+
+[2025-05-19 20:26:29,418][    INFO] ===========> Epoch: 1, LR: 0.00494, Previous best: 65.52
+[2025-05-19 20:26:30,181][    INFO] Iters: 0, Total loss: 0.110, Loss x: 0.193, Loss s: 0.023, Loss w_fp: 0.031,  Loss contrast: 0.000, Mask ratio: 0.986
+[2025-05-19 20:26:31,708][    INFO] Iters: 11, Total loss: 0.180, Loss x: 0.314, Loss s: 0.055, Loss w_fp: 0.037,  Loss contrast: 0.000, Mask ratio: 0.974
+[2025-05-19 20:26:33,476][    INFO] Iters: 22, Total loss: 0.163, Loss x: 0.287, Loss s: 0.046, Loss w_fp: 0.033,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:26:35,222][    INFO] Iters: 33, Total loss: 0.162, Loss x: 0.269, Loss s: 0.058, Loss w_fp: 0.050,  Loss contrast: 0.000, Mask ratio: 0.971
+[2025-05-19 20:26:36,928][    INFO] Iters: 44, Total loss: 0.175, Loss x: 0.294, Loss s: 0.065, Loss w_fp: 0.046,  Loss contrast: 0.000, Mask ratio: 0.971
+[2025-05-19 20:26:38,665][    INFO] Iters: 55, Total loss: 0.171, Loss x: 0.291, Loss s: 0.059, Loss w_fp: 0.043,  Loss contrast: 0.000, Mask ratio: 0.973
+[2025-05-19 20:26:40,589][    INFO] Iters: 66, Total loss: 0.164, Loss x: 0.280, Loss s: 0.056, Loss w_fp: 0.040,  Loss contrast: 0.000, Mask ratio: 0.971
+[2025-05-19 20:26:42,813][    INFO] Iters: 77, Total loss: 0.158, Loss x: 0.268, Loss s: 0.055, Loss w_fp: 0.039,  Loss contrast: 0.000, Mask ratio: 0.973
+[2025-05-19 20:26:44,373][    INFO] Iters: 88, Total loss: 0.152, Loss x: 0.258, Loss s: 0.052, Loss w_fp: 0.038,  Loss contrast: 0.000, Mask ratio: 0.974
+[2025-05-19 20:27:34,790][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.73,IoU1:98.73
+[2025-05-19 20:27:34,791][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 55.31,IoU1:50.30
+[2025-05-19 20:27:34,791][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 77.02, MeanIoU1: 74.52
+
+[2025-05-19 20:27:34,850][    INFO] ===========> Epoch: 2, LR: 0.00489, Previous best: 74.52
+[2025-05-19 20:27:35,651][    INFO] Iters: 0, Total loss: 0.094, Loss x: 0.143, Loss s: 0.057, Loss w_fp: 0.034,  Loss contrast: 0.000, Mask ratio: 0.977
+[2025-05-19 20:27:37,177][    INFO] Iters: 11, Total loss: 0.154, Loss x: 0.275, Loss s: 0.044, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.986
+[2025-05-19 20:27:38,789][    INFO] Iters: 22, Total loss: 0.141, Loss x: 0.243, Loss s: 0.052, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.978
+[2025-05-19 20:27:40,311][    INFO] Iters: 33, Total loss: 0.157, Loss x: 0.276, Loss s: 0.048, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:27:41,860][    INFO] Iters: 44, Total loss: 0.150, Loss x: 0.259, Loss s: 0.053, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.977
+[2025-05-19 20:27:43,382][    INFO] Iters: 55, Total loss: 0.159, Loss x: 0.278, Loss s: 0.052, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.977
+[2025-05-19 20:27:45,006][    INFO] Iters: 66, Total loss: 0.156, Loss x: 0.271, Loss s: 0.052, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.974
+[2025-05-19 20:27:46,557][    INFO] Iters: 77, Total loss: 0.153, Loss x: 0.266, Loss s: 0.051, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.975
+[2025-05-19 20:27:48,094][    INFO] Iters: 88, Total loss: 0.146, Loss x: 0.253, Loss s: 0.050, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.976
+[2025-05-19 20:28:34,939][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.80,IoU1:98.80
+[2025-05-19 20:28:34,939][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 58.16,IoU1:52.81
+[2025-05-19 20:28:34,939][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 78.48, MeanIoU1: 75.80
+
+[2025-05-19 20:28:34,998][    INFO] ===========> Epoch: 3, LR: 0.00483, Previous best: 75.80
+[2025-05-19 20:28:35,838][    INFO] Iters: 0, Total loss: 0.237, Loss x: 0.439, Loss s: 0.029, Loss w_fp: 0.040,  Loss contrast: 0.000, Mask ratio: 0.987
+[2025-05-19 20:28:37,447][    INFO] Iters: 11, Total loss: 0.151, Loss x: 0.251, Loss s: 0.066, Loss w_fp: 0.036,  Loss contrast: 0.000, Mask ratio: 0.976
+[2025-05-19 20:28:39,225][    INFO] Iters: 22, Total loss: 0.129, Loss x: 0.201, Loss s: 0.079, Loss w_fp: 0.034,  Loss contrast: 0.000, Mask ratio: 0.977
+[2025-05-19 20:28:40,989][    INFO] Iters: 33, Total loss: 0.158, Loss x: 0.261, Loss s: 0.074, Loss w_fp: 0.034,  Loss contrast: 0.000, Mask ratio: 0.978
+[2025-05-19 20:28:42,778][    INFO] Iters: 44, Total loss: 0.145, Loss x: 0.241, Loss s: 0.067, Loss w_fp: 0.031,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:28:44,543][    INFO] Iters: 55, Total loss: 0.139, Loss x: 0.232, Loss s: 0.062, Loss w_fp: 0.030,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:28:46,287][    INFO] Iters: 66, Total loss: 0.135, Loss x: 0.226, Loss s: 0.060, Loss w_fp: 0.029,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:28:48,043][    INFO] Iters: 77, Total loss: 0.142, Loss x: 0.237, Loss s: 0.063, Loss w_fp: 0.032,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:28:49,807][    INFO] Iters: 88, Total loss: 0.141, Loss x: 0.235, Loss s: 0.062, Loss w_fp: 0.031,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:29:36,744][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.68,IoU1:98.68
+[2025-05-19 20:29:36,744][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 45.34,IoU1:43.27
+[2025-05-19 20:29:36,744][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 72.01, MeanIoU1: 70.98
+
+[2025-05-19 20:29:36,775][    INFO] ===========> Epoch: 4, LR: 0.00478, Previous best: 75.80
+[2025-05-19 20:29:37,602][    INFO] Iters: 0, Total loss: 0.108, Loss x: 0.199, Loss s: 0.020, Loss w_fp: 0.012,  Loss contrast: 0.000, Mask ratio: 0.994
+[2025-05-19 20:29:39,180][    INFO] Iters: 11, Total loss: 0.125, Loss x: 0.221, Loss s: 0.033, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.984
+[2025-05-19 20:29:40,708][    INFO] Iters: 22, Total loss: 0.127, Loss x: 0.221, Loss s: 0.039, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.978
+[2025-05-19 20:29:42,282][    INFO] Iters: 33, Total loss: 0.127, Loss x: 0.215, Loss s: 0.047, Loss w_fp: 0.029,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:29:43,887][    INFO] Iters: 44, Total loss: 0.136, Loss x: 0.236, Loss s: 0.045, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:29:45,443][    INFO] Iters: 55, Total loss: 0.137, Loss x: 0.238, Loss s: 0.043, Loss w_fp: 0.027,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:29:46,942][    INFO] Iters: 66, Total loss: 0.136, Loss x: 0.236, Loss s: 0.046, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:29:48,508][    INFO] Iters: 77, Total loss: 0.133, Loss x: 0.230, Loss s: 0.047, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:29:50,011][    INFO] Iters: 88, Total loss: 0.132, Loss x: 0.227, Loss s: 0.047, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:30:37,708][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.84,IoU1:98.84
+[2025-05-19 20:30:37,708][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 56.37,IoU1:52.43
+[2025-05-19 20:30:37,708][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 77.61, MeanIoU1: 75.63
+
+[2025-05-19 20:30:37,740][    INFO] ===========> Epoch: 5, LR: 0.00472, Previous best: 75.80
+[2025-05-19 20:30:38,578][    INFO] Iters: 0, Total loss: 0.167, Loss x: 0.311, Loss s: 0.028, Loss w_fp: 0.015,  Loss contrast: 0.000, Mask ratio: 0.987
+[2025-05-19 20:30:40,064][    INFO] Iters: 11, Total loss: 0.148, Loss x: 0.253, Loss s: 0.061, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:30:41,627][    INFO] Iters: 22, Total loss: 0.144, Loss x: 0.234, Loss s: 0.082, Loss w_fp: 0.027,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:30:43,175][    INFO] Iters: 33, Total loss: 0.126, Loss x: 0.204, Loss s: 0.072, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:30:44,716][    INFO] Iters: 44, Total loss: 0.131, Loss x: 0.214, Loss s: 0.070, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:30:46,346][    INFO] Iters: 55, Total loss: 0.134, Loss x: 0.221, Loss s: 0.066, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:30:47,895][    INFO] Iters: 66, Total loss: 0.130, Loss x: 0.214, Loss s: 0.064, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:30:49,441][    INFO] Iters: 77, Total loss: 0.131, Loss x: 0.218, Loss s: 0.061, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:30:50,977][    INFO] Iters: 88, Total loss: 0.128, Loss x: 0.214, Loss s: 0.059, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:31:38,154][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.98,IoU1:98.98
+[2025-05-19 20:31:38,154][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 67.57,IoU1:60.38
+[2025-05-19 20:31:38,155][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 83.27, MeanIoU1: 79.68
+
+[2025-05-19 20:31:38,215][    INFO] ===========> Epoch: 6, LR: 0.00466, Previous best: 79.68
+[2025-05-19 20:31:39,057][    INFO] Iters: 0, Total loss: 0.132, Loss x: 0.226, Loss s: 0.054, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.992
+[2025-05-19 20:31:40,556][    INFO] Iters: 11, Total loss: 0.116, Loss x: 0.197, Loss s: 0.043, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.984
+[2025-05-19 20:31:42,125][    INFO] Iters: 22, Total loss: 0.124, Loss x: 0.213, Loss s: 0.043, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:31:43,651][    INFO] Iters: 33, Total loss: 0.119, Loss x: 0.200, Loss s: 0.050, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:31:45,284][    INFO] Iters: 44, Total loss: 0.121, Loss x: 0.207, Loss s: 0.048, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.984
+[2025-05-19 20:31:46,886][    INFO] Iters: 55, Total loss: 0.118, Loss x: 0.197, Loss s: 0.052, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:31:48,450][    INFO] Iters: 66, Total loss: 0.122, Loss x: 0.206, Loss s: 0.050, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:31:50,088][    INFO] Iters: 77, Total loss: 0.121, Loss x: 0.203, Loss s: 0.050, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:31:51,621][    INFO] Iters: 88, Total loss: 0.118, Loss x: 0.198, Loss s: 0.049, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:32:39,248][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.90,IoU1:98.90
+[2025-05-19 20:32:39,248][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 70.35,IoU1:60.50
+[2025-05-19 20:32:39,248][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 84.62, MeanIoU1: 79.70
+
+[2025-05-19 20:32:39,308][    INFO] ===========> Epoch: 7, LR: 0.00461, Previous best: 79.70
+[2025-05-19 20:32:40,150][    INFO] Iters: 0, Total loss: 0.068, Loss x: 0.110, Loss s: 0.042, Loss w_fp: 0.012,  Loss contrast: 0.000, Mask ratio: 0.992
+[2025-05-19 20:32:41,693][    INFO] Iters: 11, Total loss: 0.113, Loss x: 0.190, Loss s: 0.051, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:32:43,280][    INFO] Iters: 22, Total loss: 0.107, Loss x: 0.165, Loss s: 0.073, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.977
+[2025-05-19 20:32:44,865][    INFO] Iters: 33, Total loss: 0.107, Loss x: 0.168, Loss s: 0.066, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:32:46,438][    INFO] Iters: 44, Total loss: 0.109, Loss x: 0.176, Loss s: 0.058, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:32:48,034][    INFO] Iters: 55, Total loss: 0.111, Loss x: 0.179, Loss s: 0.061, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:32:49,638][    INFO] Iters: 66, Total loss: 0.116, Loss x: 0.191, Loss s: 0.060, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:32:51,212][    INFO] Iters: 77, Total loss: 0.122, Loss x: 0.201, Loss s: 0.061, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:32:52,731][    INFO] Iters: 88, Total loss: 0.122, Loss x: 0.200, Loss s: 0.062, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:33:40,098][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.02,IoU1:99.02
+[2025-05-19 20:33:40,098][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 69.55,IoU1:62.52
+[2025-05-19 20:33:40,098][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 84.29, MeanIoU1: 80.77
+
+[2025-05-19 20:33:40,130][    INFO] ===========> Epoch: 8, LR: 0.00455, Previous best: 80.77
+[2025-05-19 20:33:40,968][    INFO] Iters: 0, Total loss: 0.097, Loss x: 0.170, Loss s: 0.031, Loss w_fp: 0.016,  Loss contrast: 0.000, Mask ratio: 0.988
+[2025-05-19 20:33:42,763][    INFO] Iters: 11, Total loss: 0.092, Loss x: 0.142, Loss s: 0.053, Loss w_fp: 0.032,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:33:44,628][    INFO] Iters: 22, Total loss: 0.099, Loss x: 0.159, Loss s: 0.049, Loss w_fp: 0.027,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:33:46,513][    INFO] Iters: 33, Total loss: 0.111, Loss x: 0.180, Loss s: 0.054, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:33:48,258][    INFO] Iters: 44, Total loss: 0.106, Loss x: 0.169, Loss s: 0.060, Loss w_fp: 0.028,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:33:50,085][    INFO] Iters: 55, Total loss: 0.103, Loss x: 0.165, Loss s: 0.056, Loss w_fp: 0.026,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:33:51,980][    INFO] Iters: 66, Total loss: 0.104, Loss x: 0.166, Loss s: 0.058, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:33:53,783][    INFO] Iters: 77, Total loss: 0.105, Loss x: 0.168, Loss s: 0.058, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:33:55,611][    INFO] Iters: 88, Total loss: 0.107, Loss x: 0.173, Loss s: 0.056, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:34:43,817][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.00,IoU1:99.00
+[2025-05-19 20:34:43,817][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 72.13,IoU1:63.20
+[2025-05-19 20:34:43,817][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 85.57, MeanIoU1: 81.10
+
+[2025-05-19 20:34:43,877][    INFO] ===========> Epoch: 9, LR: 0.00449, Previous best: 81.10
+[2025-05-19 20:34:44,687][    INFO] Iters: 0, Total loss: 0.068, Loss x: 0.106, Loss s: 0.046, Loss w_fp: 0.015,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:34:46,194][    INFO] Iters: 11, Total loss: 0.129, Loss x: 0.218, Loss s: 0.058, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:34:47,722][    INFO] Iters: 22, Total loss: 0.125, Loss x: 0.212, Loss s: 0.057, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:34:49,305][    INFO] Iters: 33, Total loss: 0.115, Loss x: 0.196, Loss s: 0.050, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:34:50,860][    INFO] Iters: 44, Total loss: 0.115, Loss x: 0.195, Loss s: 0.049, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:34:52,359][    INFO] Iters: 55, Total loss: 0.115, Loss x: 0.194, Loss s: 0.049, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:34:53,917][    INFO] Iters: 66, Total loss: 0.114, Loss x: 0.191, Loss s: 0.051, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:34:55,558][    INFO] Iters: 77, Total loss: 0.112, Loss x: 0.188, Loss s: 0.051, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:34:57,159][    INFO] Iters: 88, Total loss: 0.110, Loss x: 0.184, Loss s: 0.050, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:35:58,888][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.07,IoU1:99.07
+[2025-05-19 20:35:58,888][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 75.38,IoU1:65.64
+[2025-05-19 20:35:58,888][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 87.22, MeanIoU1: 82.35
+
+[2025-05-19 20:35:58,949][    INFO] ===========> Epoch: 10, LR: 0.00443, Previous best: 82.35
+[2025-05-19 20:35:59,624][    INFO] Iters: 0, Total loss: 0.091, Loss x: 0.140, Loss s: 0.059, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.990
+[2025-05-19 20:36:01,125][    INFO] Iters: 11, Total loss: 0.081, Loss x: 0.114, Loss s: 0.072, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:36:02,686][    INFO] Iters: 22, Total loss: 0.104, Loss x: 0.167, Loss s: 0.059, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.984
+[2025-05-19 20:36:04,291][    INFO] Iters: 33, Total loss: 0.102, Loss x: 0.162, Loss s: 0.060, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.984
+[2025-05-19 20:36:05,831][    INFO] Iters: 44, Total loss: 0.103, Loss x: 0.163, Loss s: 0.060, Loss w_fp: 0.025,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:36:07,366][    INFO] Iters: 55, Total loss: 0.106, Loss x: 0.170, Loss s: 0.060, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:36:08,932][    INFO] Iters: 66, Total loss: 0.108, Loss x: 0.175, Loss s: 0.057, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:36:10,406][    INFO] Iters: 77, Total loss: 0.108, Loss x: 0.177, Loss s: 0.055, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:36:11,937][    INFO] Iters: 88, Total loss: 0.107, Loss x: 0.176, Loss s: 0.054, Loss w_fp: 0.023,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:37:00,280][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.13,IoU1:99.13
+[2025-05-19 20:37:00,280][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 68.21,IoU1:63.92
+[2025-05-19 20:37:00,280][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 83.67, MeanIoU1: 81.53
+
+[2025-05-19 20:37:00,312][    INFO] ===========> Epoch: 11, LR: 0.00438, Previous best: 82.35
+[2025-05-19 20:37:01,118][    INFO] Iters: 0, Total loss: 0.056, Loss x: 0.086, Loss s: 0.031, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.988
+[2025-05-19 20:37:02,606][    INFO] Iters: 11, Total loss: 0.096, Loss x: 0.156, Loss s: 0.052, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:37:04,210][    INFO] Iters: 22, Total loss: 0.101, Loss x: 0.167, Loss s: 0.047, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:37:05,762][    INFO] Iters: 33, Total loss: 0.102, Loss x: 0.170, Loss s: 0.047, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:37:07,344][    INFO] Iters: 44, Total loss: 0.100, Loss x: 0.163, Loss s: 0.051, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:37:08,943][    INFO] Iters: 55, Total loss: 0.098, Loss x: 0.161, Loss s: 0.048, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:37:10,427][    INFO] Iters: 66, Total loss: 0.096, Loss x: 0.155, Loss s: 0.050, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:37:11,954][    INFO] Iters: 77, Total loss: 0.097, Loss x: 0.160, Loss s: 0.048, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:37:13,500][    INFO] Iters: 88, Total loss: 0.097, Loss x: 0.160, Loss s: 0.048, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:38:01,430][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.19,IoU1:99.19
+[2025-05-19 20:38:01,430][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 74.70,IoU1:68.00
+[2025-05-19 20:38:01,430][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 86.95, MeanIoU1: 83.59
+
+[2025-05-19 20:38:01,461][    INFO] ===========> Epoch: 12, LR: 0.00432, Previous best: 83.59
+[2025-05-19 20:38:02,275][    INFO] Iters: 0, Total loss: 0.070, Loss x: 0.113, Loss s: 0.033, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:38:03,895][    INFO] Iters: 11, Total loss: 0.080, Loss x: 0.119, Loss s: 0.057, Loss w_fp: 0.024,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:38:05,533][    INFO] Iters: 22, Total loss: 0.085, Loss x: 0.136, Loss s: 0.048, Loss w_fp: 0.019,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:38:07,086][    INFO] Iters: 33, Total loss: 0.096, Loss x: 0.158, Loss s: 0.047, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:38:08,691][    INFO] Iters: 44, Total loss: 0.100, Loss x: 0.167, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:38:10,305][    INFO] Iters: 55, Total loss: 0.100, Loss x: 0.169, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:38:11,848][    INFO] Iters: 66, Total loss: 0.102, Loss x: 0.171, Loss s: 0.045, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:38:13,399][    INFO] Iters: 77, Total loss: 0.098, Loss x: 0.163, Loss s: 0.046, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:38:15,001][    INFO] Iters: 88, Total loss: 0.101, Loss x: 0.168, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:39:04,445][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.11,IoU1:99.11
+[2025-05-19 20:39:04,445][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 74.86,IoU1:66.55
+[2025-05-19 20:39:04,445][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 86.99, MeanIoU1: 82.83
+
+[2025-05-19 20:39:04,476][    INFO] ===========> Epoch: 13, LR: 0.00426, Previous best: 83.59
+[2025-05-19 20:39:05,289][    INFO] Iters: 0, Total loss: 0.080, Loss x: 0.144, Loss s: 0.023, Loss w_fp: 0.010,  Loss contrast: 0.000, Mask ratio: 0.992
+[2025-05-19 20:39:06,859][    INFO] Iters: 11, Total loss: 0.096, Loss x: 0.161, Loss s: 0.042, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.979
+[2025-05-19 20:39:08,380][    INFO] Iters: 22, Total loss: 0.107, Loss x: 0.181, Loss s: 0.043, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 20:39:09,942][    INFO] Iters: 33, Total loss: 0.109, Loss x: 0.188, Loss s: 0.040, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:39:11,442][    INFO] Iters: 44, Total loss: 0.106, Loss x: 0.180, Loss s: 0.045, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.981
+[2025-05-19 20:39:13,037][    INFO] Iters: 55, Total loss: 0.100, Loss x: 0.167, Loss s: 0.045, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:39:14,613][    INFO] Iters: 66, Total loss: 0.097, Loss x: 0.161, Loss s: 0.045, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.982
+[2025-05-19 20:39:16,279][    INFO] Iters: 77, Total loss: 0.100, Loss x: 0.166, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:39:17,798][    INFO] Iters: 88, Total loss: 0.097, Loss x: 0.161, Loss s: 0.046, Loss w_fp: 0.020,  Loss contrast: 0.000, Mask ratio: 0.983
+[2025-05-19 20:40:07,467][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.17,IoU1:99.17
+[2025-05-19 20:40:07,467][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 74.92,IoU1:67.79
+[2025-05-19 20:40:07,467][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 87.04, MeanIoU1: 83.48
+
+[2025-05-19 20:40:07,499][    INFO] ===========> Epoch: 14, LR: 0.00421, Previous best: 83.59
+[2025-05-19 20:40:08,297][    INFO] Iters: 0, Total loss: 0.057, Loss x: 0.092, Loss s: 0.028, Loss w_fp: 0.015,  Loss contrast: 0.000, Mask ratio: 0.993
+[2025-05-19 20:40:09,939][    INFO] Iters: 11, Total loss: 0.078, Loss x: 0.129, Loss s: 0.034, Loss w_fp: 0.017,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:40:11,541][    INFO] Iters: 22, Total loss: 0.086, Loss x: 0.146, Loss s: 0.036, Loss w_fp: 0.017,  Loss contrast: 0.000, Mask ratio: 0.986
+[2025-05-19 20:40:13,184][    INFO] Iters: 33, Total loss: 0.083, Loss x: 0.138, Loss s: 0.040, Loss w_fp: 0.017,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:40:14,788][    INFO] Iters: 44, Total loss: 0.078, Loss x: 0.127, Loss s: 0.040, Loss w_fp: 0.019,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:40:16,340][    INFO] Iters: 55, Total loss: 0.083, Loss x: 0.135, Loss s: 0.040, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.986
+[2025-05-19 20:40:17,990][    INFO] Iters: 66, Total loss: 0.088, Loss x: 0.143, Loss s: 0.045, Loss w_fp: 0.021,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:40:19,497][    INFO] Iters: 77, Total loss: 0.088, Loss x: 0.143, Loss s: 0.045, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.986
+[2025-05-19 20:40:21,011][    INFO] Iters: 88, Total loss: 0.091, Loss x: 0.148, Loss s: 0.045, Loss w_fp: 0.022,  Loss contrast: 0.000, Mask ratio: 0.985
+[2025-05-19 20:41:08,799][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.11,IoU1:99.11
+[2025-05-19 20:41:08,800][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 77.50,IoU1:67.48
+[2025-05-19 20:41:08,800][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 88.30, MeanIoU1: 83.29
+
+[2025-05-19 20:41:08,860][    INFO] ===========> Epoch: 15, LR: 0.00415, Previous best: 83.59
+/root/miniconda3/envs/unimatch/lib/python3.10/site-packages/torch/functional.py:478: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2894.)
+  return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
+[2025-05-19 20:41:10,178][    INFO] Iters: 0, Total loss: 0.397, Loss x: 0.175, Loss s: 0.038, Loss w_fp: 0.024,  Loss contrast: 1.573, Mask ratio: 0.987
+[2025-05-19 20:41:16,219][    INFO] Iters: 11, Total loss: 0.344, Loss x: 0.165, Loss s: 0.070, Loss w_fp: 0.027,  Loss contrast: 1.295, Mask ratio: 0.978
+[2025-05-19 20:41:22,382][    INFO] Iters: 22, Total loss: 0.350, Loss x: 0.157, Loss s: 0.065, Loss w_fp: 0.023,  Loss contrast: 1.350, Mask ratio: 0.981
+[2025-05-19 20:41:28,431][    INFO] Iters: 33, Total loss: 0.356, Loss x: 0.150, Loss s: 0.058, Loss w_fp: 0.021,  Loss contrast: 1.400, Mask ratio: 0.982
+[2025-05-19 20:41:34,583][    INFO] Iters: 44, Total loss: 0.343, Loss x: 0.141, Loss s: 0.050, Loss w_fp: 0.021,  Loss contrast: 1.364, Mask ratio: 0.983
+[2025-05-19 20:41:40,858][    INFO] Iters: 55, Total loss: 0.348, Loss x: 0.150, Loss s: 0.048, Loss w_fp: 0.020,  Loss contrast: 1.371, Mask ratio: 0.983
+[2025-05-19 20:41:47,112][    INFO] Iters: 66, Total loss: 0.352, Loss x: 0.148, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 1.396, Mask ratio: 0.984
+[2025-05-19 20:41:53,218][    INFO] Iters: 77, Total loss: 0.351, Loss x: 0.148, Loss s: 0.046, Loss w_fp: 0.022,  Loss contrast: 1.392, Mask ratio: 0.984
+[2025-05-19 20:41:59,269][    INFO] Iters: 88, Total loss: 0.351, Loss x: 0.150, Loss s: 0.046, Loss w_fp: 0.022,  Loss contrast: 1.389, Mask ratio: 0.984
+[2025-05-19 20:42:47,046][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.16,IoU1:99.16
+[2025-05-19 20:42:47,047][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 77.65,IoU1:68.55
+[2025-05-19 20:42:47,047][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 88.41, MeanIoU1: 83.86
+
+[2025-05-19 20:42:47,109][    INFO] ===========> Epoch: 16, LR: 0.00409, Previous best: 83.86
+[2025-05-19 20:42:48,163][    INFO] Iters: 0, Total loss: 0.402, Loss x: 0.249, Loss s: 0.053, Loss w_fp: 0.024,  Loss contrast: 1.436, Mask ratio: 0.972
+[2025-05-19 20:42:54,250][    INFO] Iters: 11, Total loss: 0.353, Loss x: 0.165, Loss s: 0.042, Loss w_fp: 0.021,  Loss contrast: 1.371, Mask ratio: 0.986
+[2025-05-19 20:43:00,486][    INFO] Iters: 22, Total loss: 0.353, Loss x: 0.138, Loss s: 0.038, Loss w_fp: 0.019,  Loss contrast: 1.433, Mask ratio: 0.985
+[2025-05-19 20:43:06,639][    INFO] Iters: 33, Total loss: 0.346, Loss x: 0.134, Loss s: 0.039, Loss w_fp: 0.019,  Loss contrast: 1.404, Mask ratio: 0.986
+[2025-05-19 20:43:12,783][    INFO] Iters: 44, Total loss: 0.342, Loss x: 0.132, Loss s: 0.037, Loss w_fp: 0.018,  Loss contrast: 1.392, Mask ratio: 0.986
+[2025-05-19 20:43:18,851][    INFO] Iters: 55, Total loss: 0.338, Loss x: 0.137, Loss s: 0.040, Loss w_fp: 0.019,  Loss contrast: 1.360, Mask ratio: 0.985
+[2025-05-19 20:43:24,720][    INFO] Iters: 66, Total loss: 0.325, Loss x: 0.135, Loss s: 0.042, Loss w_fp: 0.019,  Loss contrast: 1.294, Mask ratio: 0.985
+[2025-05-19 20:43:30,691][    INFO] Iters: 77, Total loss: 0.327, Loss x: 0.135, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 1.299, Mask ratio: 0.985
+[2025-05-19 20:43:36,892][    INFO] Iters: 88, Total loss: 0.332, Loss x: 0.145, Loss s: 0.043, Loss w_fp: 0.021,  Loss contrast: 1.307, Mask ratio: 0.984
+[2025-05-19 20:44:24,626][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 98.99,IoU1:98.99
+[2025-05-19 20:44:24,626][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 79.40,IoU1:65.71
+[2025-05-19 20:44:24,626][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.19, MeanIoU1: 82.35
+
+[2025-05-19 20:44:24,688][    INFO] ===========> Epoch: 17, LR: 0.00403, Previous best: 83.86
+[2025-05-19 20:44:25,795][    INFO] Iters: 0, Total loss: 0.050, Loss x: 0.090, Loss s: 0.039, Loss w_fp: 0.032,  Loss contrast: 0.000, Mask ratio: 0.970
+[2025-05-19 20:44:31,963][    INFO] Iters: 11, Total loss: 0.320, Loss x: 0.147, Loss s: 0.037, Loss w_fp: 0.020,  Loss contrast: 1.250, Mask ratio: 0.982
+[2025-05-19 20:44:37,918][    INFO] Iters: 22, Total loss: 0.319, Loss x: 0.121, Loss s: 0.041, Loss w_fp: 0.021,  Loss contrast: 1.292, Mask ratio: 0.981
+[2025-05-19 20:44:44,233][    INFO] Iters: 33, Total loss: 0.338, Loss x: 0.139, Loss s: 0.037, Loss w_fp: 0.019,  Loss contrast: 1.358, Mask ratio: 0.984
+[2025-05-19 20:44:50,463][    INFO] Iters: 44, Total loss: 0.348, Loss x: 0.139, Loss s: 0.052, Loss w_fp: 0.020,  Loss contrast: 1.387, Mask ratio: 0.981
+[2025-05-19 20:44:56,459][    INFO] Iters: 55, Total loss: 0.336, Loss x: 0.143, Loss s: 0.049, Loss w_fp: 0.020,  Loss contrast: 1.325, Mask ratio: 0.983
+[2025-05-19 20:45:02,625][    INFO] Iters: 66, Total loss: 0.343, Loss x: 0.148, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 1.350, Mask ratio: 0.983
+[2025-05-19 20:45:08,532][    INFO] Iters: 77, Total loss: 0.334, Loss x: 0.146, Loss s: 0.048, Loss w_fp: 0.020,  Loss contrast: 1.311, Mask ratio: 0.982
+[2025-05-19 20:45:14,747][    INFO] Iters: 88, Total loss: 0.338, Loss x: 0.145, Loss s: 0.046, Loss w_fp: 0.019,  Loss contrast: 1.333, Mask ratio: 0.983
+[2025-05-19 20:46:03,454][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.22,IoU1:99.22
+[2025-05-19 20:46:03,455][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 72.57,IoU1:67.90
+[2025-05-19 20:46:03,455][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 85.90, MeanIoU1: 83.56
+
+[2025-05-19 20:46:03,486][    INFO] ===========> Epoch: 18, LR: 0.00398, Previous best: 83.86
+[2025-05-19 20:46:04,543][    INFO] Iters: 0, Total loss: 0.410, Loss x: 0.233, Loss s: 0.065, Loss w_fp: 0.030,  Loss contrast: 1.490, Mask ratio: 0.984
+[2025-05-19 20:46:10,552][    INFO] Iters: 11, Total loss: 0.310, Loss x: 0.130, Loss s: 0.035, Loss w_fp: 0.017,  Loss contrast: 1.238, Mask ratio: 0.985
+[2025-05-19 20:46:16,688][    INFO] Iters: 22, Total loss: 0.319, Loss x: 0.128, Loss s: 0.042, Loss w_fp: 0.017,  Loss contrast: 1.281, Mask ratio: 0.987
+[2025-05-19 20:46:22,893][    INFO] Iters: 33, Total loss: 0.331, Loss x: 0.124, Loss s: 0.045, Loss w_fp: 0.018,  Loss contrast: 1.345, Mask ratio: 0.986
+[2025-05-19 20:46:29,139][    INFO] Iters: 44, Total loss: 0.344, Loss x: 0.141, Loss s: 0.043, Loss w_fp: 0.017,  Loss contrast: 1.377, Mask ratio: 0.985
+[2025-05-19 20:46:35,495][    INFO] Iters: 55, Total loss: 0.352, Loss x: 0.151, Loss s: 0.043, Loss w_fp: 0.017,  Loss contrast: 1.400, Mask ratio: 0.986
+[2025-05-19 20:46:41,610][    INFO] Iters: 66, Total loss: 0.355, Loss x: 0.149, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.408, Mask ratio: 0.984
+[2025-05-19 20:46:47,868][    INFO] Iters: 77, Total loss: 0.357, Loss x: 0.148, Loss s: 0.050, Loss w_fp: 0.019,  Loss contrast: 1.418, Mask ratio: 0.984
+[2025-05-19 20:46:54,050][    INFO] Iters: 88, Total loss: 0.356, Loss x: 0.145, Loss s: 0.049, Loss w_fp: 0.019,  Loss contrast: 1.424, Mask ratio: 0.984
+[2025-05-19 20:47:41,704][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.26,IoU1:99.26
+[2025-05-19 20:47:41,705][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 75.02,IoU1:69.91
+[2025-05-19 20:47:41,705][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 87.14, MeanIoU1: 84.59
+
+[2025-05-19 20:47:41,737][    INFO] ===========> Epoch: 19, LR: 0.00392, Previous best: 84.59
+[2025-05-19 20:47:42,797][    INFO] Iters: 0, Total loss: 0.342, Loss x: 0.120, Loss s: 0.023, Loss w_fp: 0.009,  Loss contrast: 1.436, Mask ratio: 0.993
+[2025-05-19 20:47:48,786][    INFO] Iters: 11, Total loss: 0.322, Loss x: 0.172, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.211, Mask ratio: 0.986
+[2025-05-19 20:47:54,867][    INFO] Iters: 22, Total loss: 0.331, Loss x: 0.165, Loss s: 0.037, Loss w_fp: 0.019,  Loss contrast: 1.271, Mask ratio: 0.984
+[2025-05-19 20:48:00,935][    INFO] Iters: 33, Total loss: 0.327, Loss x: 0.161, Loss s: 0.038, Loss w_fp: 0.019,  Loss contrast: 1.255, Mask ratio: 0.983
+[2025-05-19 20:48:07,165][    INFO] Iters: 44, Total loss: 0.336, Loss x: 0.156, Loss s: 0.040, Loss w_fp: 0.021,  Loss contrast: 1.308, Mask ratio: 0.982
+[2025-05-19 20:48:13,282][    INFO] Iters: 55, Total loss: 0.335, Loss x: 0.150, Loss s: 0.039, Loss w_fp: 0.020,  Loss contrast: 1.315, Mask ratio: 0.983
+[2025-05-19 20:48:19,429][    INFO] Iters: 66, Total loss: 0.333, Loss x: 0.145, Loss s: 0.038, Loss w_fp: 0.020,  Loss contrast: 1.319, Mask ratio: 0.984
+[2025-05-19 20:48:25,595][    INFO] Iters: 77, Total loss: 0.334, Loss x: 0.145, Loss s: 0.041, Loss w_fp: 0.019,  Loss contrast: 1.321, Mask ratio: 0.984
+[2025-05-19 20:48:31,953][    INFO] Iters: 88, Total loss: 0.338, Loss x: 0.145, Loss s: 0.040, Loss w_fp: 0.019,  Loss contrast: 1.341, Mask ratio: 0.985
+[2025-05-19 20:49:19,116][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.24,IoU1:99.24
+[2025-05-19 20:49:19,117][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 75.59,IoU1:69.56
+[2025-05-19 20:49:19,117][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 87.41, MeanIoU1: 84.40
+
+[2025-05-19 20:49:19,150][    INFO] ===========> Epoch: 20, LR: 0.00386, Previous best: 84.59
+[2025-05-19 20:49:20,179][    INFO] Iters: 0, Total loss: 0.356, Loss x: 0.134, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.461, Mask ratio: 0.987
+[2025-05-19 20:49:26,353][    INFO] Iters: 11, Total loss: 0.349, Loss x: 0.101, Loss s: 0.055, Loss w_fp: 0.023,  Loss contrast: 1.467, Mask ratio: 0.983
+[2025-05-19 20:49:32,614][    INFO] Iters: 22, Total loss: 0.347, Loss x: 0.127, Loss s: 0.051, Loss w_fp: 0.021,  Loss contrast: 1.409, Mask ratio: 0.983
+[2025-05-19 20:49:38,827][    INFO] Iters: 33, Total loss: 0.356, Loss x: 0.142, Loss s: 0.048, Loss w_fp: 0.020,  Loss contrast: 1.429, Mask ratio: 0.984
+[2025-05-19 20:49:44,756][    INFO] Iters: 44, Total loss: 0.345, Loss x: 0.141, Loss s: 0.050, Loss w_fp: 0.021,  Loss contrast: 1.371, Mask ratio: 0.983
+[2025-05-19 20:49:51,002][    INFO] Iters: 55, Total loss: 0.347, Loss x: 0.140, Loss s: 0.046, Loss w_fp: 0.020,  Loss contrast: 1.391, Mask ratio: 0.984
+[2025-05-19 20:49:57,078][    INFO] Iters: 66, Total loss: 0.340, Loss x: 0.138, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.360, Mask ratio: 0.985
+[2025-05-19 20:50:03,293][    INFO] Iters: 77, Total loss: 0.341, Loss x: 0.135, Loss s: 0.042, Loss w_fp: 0.019,  Loss contrast: 1.374, Mask ratio: 0.985
+[2025-05-19 20:50:09,478][    INFO] Iters: 88, Total loss: 0.340, Loss x: 0.135, Loss s: 0.042, Loss w_fp: 0.019,  Loss contrast: 1.369, Mask ratio: 0.985
+[2025-05-19 20:50:56,142][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 20:50:56,142][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 77.26,IoU1:71.12
+[2025-05-19 20:50:56,142][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 88.27, MeanIoU1: 85.20
+
+[2025-05-19 20:50:56,175][    INFO] ===========> Epoch: 21, LR: 0.00380, Previous best: 85.20
+[2025-05-19 20:50:57,241][    INFO] Iters: 0, Total loss: 0.307, Loss x: 0.060, Loss s: 0.013, Loss w_fp: 0.015,  Loss contrast: 1.387, Mask ratio: 0.995
+[2025-05-19 20:51:03,303][    INFO] Iters: 11, Total loss: 0.320, Loss x: 0.116, Loss s: 0.031, Loss w_fp: 0.015,  Loss contrast: 1.323, Mask ratio: 0.989
+[2025-05-19 20:51:09,485][    INFO] Iters: 22, Total loss: 0.320, Loss x: 0.141, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.264, Mask ratio: 0.987
+[2025-05-19 20:51:15,539][    INFO] Iters: 33, Total loss: 0.322, Loss x: 0.129, Loss s: 0.046, Loss w_fp: 0.017,  Loss contrast: 1.288, Mask ratio: 0.983
+[2025-05-19 20:51:21,779][    INFO] Iters: 44, Total loss: 0.329, Loss x: 0.126, Loss s: 0.045, Loss w_fp: 0.018,  Loss contrast: 1.329, Mask ratio: 0.984
+[2025-05-19 20:51:28,110][    INFO] Iters: 55, Total loss: 0.336, Loss x: 0.128, Loss s: 0.046, Loss w_fp: 0.019,  Loss contrast: 1.358, Mask ratio: 0.983
+[2025-05-19 20:51:34,171][    INFO] Iters: 66, Total loss: 0.337, Loss x: 0.135, Loss s: 0.045, Loss w_fp: 0.018,  Loss contrast: 1.352, Mask ratio: 0.983
+[2025-05-19 20:51:40,184][    INFO] Iters: 77, Total loss: 0.331, Loss x: 0.140, Loss s: 0.044, Loss w_fp: 0.018,  Loss contrast: 1.314, Mask ratio: 0.984
+[2025-05-19 20:51:46,396][    INFO] Iters: 88, Total loss: 0.336, Loss x: 0.141, Loss s: 0.044, Loss w_fp: 0.018,  Loss contrast: 1.333, Mask ratio: 0.984
+[2025-05-19 20:52:34,197][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.17,IoU1:99.17
+[2025-05-19 20:52:34,198][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 72.95,IoU1:67.14
+[2025-05-19 20:52:34,198][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 86.06, MeanIoU1: 83.15
+
+[2025-05-19 20:52:34,230][    INFO] ===========> Epoch: 22, LR: 0.00374, Previous best: 85.20
+[2025-05-19 20:52:35,310][    INFO] Iters: 0, Total loss: 0.391, Loss x: 0.235, Loss s: 0.032, Loss w_fp: 0.010,  Loss contrast: 1.445, Mask ratio: 0.993
+[2025-05-19 20:52:41,501][    INFO] Iters: 11, Total loss: 0.367, Loss x: 0.152, Loss s: 0.041, Loss w_fp: 0.017,  Loss contrast: 1.472, Mask ratio: 0.980
+[2025-05-19 20:52:47,606][    INFO] Iters: 22, Total loss: 0.355, Loss x: 0.126, Loss s: 0.045, Loss w_fp: 0.019,  Loss contrast: 1.456, Mask ratio: 0.982
+[2025-05-19 20:52:53,603][    INFO] Iters: 33, Total loss: 0.328, Loss x: 0.124, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.328, Mask ratio: 0.982
+[2025-05-19 20:52:59,769][    INFO] Iters: 44, Total loss: 0.330, Loss x: 0.132, Loss s: 0.042, Loss w_fp: 0.018,  Loss contrast: 1.328, Mask ratio: 0.983
+[2025-05-19 20:53:05,780][    INFO] Iters: 55, Total loss: 0.326, Loss x: 0.132, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.301, Mask ratio: 0.982
+[2025-05-19 20:53:12,038][    INFO] Iters: 66, Total loss: 0.330, Loss x: 0.138, Loss s: 0.045, Loss w_fp: 0.019,  Loss contrast: 1.308, Mask ratio: 0.982
+[2025-05-19 20:53:18,311][    INFO] Iters: 77, Total loss: 0.334, Loss x: 0.138, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.330, Mask ratio: 0.982
+[2025-05-19 20:53:24,390][    INFO] Iters: 88, Total loss: 0.336, Loss x: 0.135, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 1.346, Mask ratio: 0.982
+[2025-05-19 20:54:11,287][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.26,IoU1:99.26
+[2025-05-19 20:54:11,287][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 79.33,IoU1:71.43
+[2025-05-19 20:54:11,287][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.30, MeanIoU1: 85.35
+
+[2025-05-19 20:54:11,349][    INFO] ===========> Epoch: 23, LR: 0.00369, Previous best: 85.35
+[2025-05-19 20:54:12,518][    INFO] Iters: 0, Total loss: 0.357, Loss x: 0.098, Loss s: 0.100, Loss w_fp: 0.029,  Loss contrast: 1.461, Mask ratio: 0.971
+[2025-05-19 20:54:18,647][    INFO] Iters: 11, Total loss: 0.334, Loss x: 0.134, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.340, Mask ratio: 0.982
+[2025-05-19 20:54:24,687][    INFO] Iters: 22, Total loss: 0.317, Loss x: 0.127, Loss s: 0.040, Loss w_fp: 0.019,  Loss contrast: 1.269, Mask ratio: 0.985
+[2025-05-19 20:54:30,696][    INFO] Iters: 33, Total loss: 0.318, Loss x: 0.122, Loss s: 0.042, Loss w_fp: 0.019,  Loss contrast: 1.284, Mask ratio: 0.985
+[2025-05-19 20:54:36,800][    INFO] Iters: 44, Total loss: 0.321, Loss x: 0.126, Loss s: 0.040, Loss w_fp: 0.019,  Loss contrast: 1.292, Mask ratio: 0.986
+[2025-05-19 20:54:42,873][    INFO] Iters: 55, Total loss: 0.323, Loss x: 0.128, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 1.297, Mask ratio: 0.985
+[2025-05-19 20:54:48,926][    INFO] Iters: 66, Total loss: 0.325, Loss x: 0.128, Loss s: 0.045, Loss w_fp: 0.020,  Loss contrast: 1.302, Mask ratio: 0.985
+[2025-05-19 20:54:54,989][    INFO] Iters: 77, Total loss: 0.320, Loss x: 0.123, Loss s: 0.045, Loss w_fp: 0.021,  Loss contrast: 1.287, Mask ratio: 0.985
+[2025-05-19 20:55:01,152][    INFO] Iters: 88, Total loss: 0.319, Loss x: 0.121, Loss s: 0.043, Loss w_fp: 0.020,  Loss contrast: 1.291, Mask ratio: 0.985
+[2025-05-19 20:55:48,843][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 20:55:48,843][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 79.05,IoU1:71.95
+[2025-05-19 20:55:48,843][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.16, MeanIoU1: 85.61
+
+[2025-05-19 20:55:48,876][    INFO] ===========> Epoch: 24, LR: 0.00363, Previous best: 85.61
+[2025-05-19 20:55:49,997][    INFO] Iters: 0, Total loss: 0.363, Loss x: 0.134, Loss s: 0.020, Loss w_fp: 0.019,  Loss contrast: 1.510, Mask ratio: 0.992
+[2025-05-19 20:55:56,090][    INFO] Iters: 11, Total loss: 0.330, Loss x: 0.083, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 1.419, Mask ratio: 0.988
+[2025-05-19 20:56:02,433][    INFO] Iters: 22, Total loss: 0.331, Loss x: 0.107, Loss s: 0.040, Loss w_fp: 0.018,  Loss contrast: 1.383, Mask ratio: 0.988
+[2025-05-19 20:56:08,375][    INFO] Iters: 33, Total loss: 0.313, Loss x: 0.112, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.278, Mask ratio: 0.987
+[2025-05-19 20:56:14,307][    INFO] Iters: 44, Total loss: 0.302, Loss x: 0.113, Loss s: 0.044, Loss w_fp: 0.018,  Loss contrast: 1.221, Mask ratio: 0.988
+[2025-05-19 20:56:20,435][    INFO] Iters: 55, Total loss: 0.308, Loss x: 0.120, Loss s: 0.043, Loss w_fp: 0.017,  Loss contrast: 1.241, Mask ratio: 0.988
+[2025-05-19 20:56:26,689][    INFO] Iters: 66, Total loss: 0.315, Loss x: 0.119, Loss s: 0.043, Loss w_fp: 0.017,  Loss contrast: 1.278, Mask ratio: 0.987
+[2025-05-19 20:56:32,726][    INFO] Iters: 77, Total loss: 0.315, Loss x: 0.123, Loss s: 0.045, Loss w_fp: 0.018,  Loss contrast: 1.265, Mask ratio: 0.987
+[2025-05-19 20:56:38,793][    INFO] Iters: 88, Total loss: 0.322, Loss x: 0.128, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.287, Mask ratio: 0.986
+[2025-05-19 20:57:26,589][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.24,IoU1:99.24
+[2025-05-19 20:57:26,589][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 78.12,IoU1:70.47
+[2025-05-19 20:57:26,589][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 88.68, MeanIoU1: 84.86
+
+[2025-05-19 20:57:26,622][    INFO] ===========> Epoch: 25, LR: 0.00357, Previous best: 85.61
+[2025-05-19 20:57:27,783][    INFO] Iters: 0, Total loss: 0.354, Loss x: 0.115, Loss s: 0.047, Loss w_fp: 0.016,  Loss contrast: 1.477, Mask ratio: 0.982
+[2025-05-19 20:57:33,866][    INFO] Iters: 11, Total loss: 0.334, Loss x: 0.131, Loss s: 0.050, Loss w_fp: 0.015,  Loss contrast: 1.340, Mask ratio: 0.984
+[2025-05-19 20:57:40,319][    INFO] Iters: 22, Total loss: 0.341, Loss x: 0.127, Loss s: 0.043, Loss w_fp: 0.014,  Loss contrast: 1.396, Mask ratio: 0.987
+[2025-05-19 20:57:46,202][    INFO] Iters: 33, Total loss: 0.322, Loss x: 0.112, Loss s: 0.049, Loss w_fp: 0.015,  Loss contrast: 1.320, Mask ratio: 0.986
+[2025-05-19 20:57:52,424][    INFO] Iters: 44, Total loss: 0.332, Loss x: 0.124, Loss s: 0.047, Loss w_fp: 0.016,  Loss contrast: 1.350, Mask ratio: 0.986
+[2025-05-19 20:57:58,793][    INFO] Iters: 55, Total loss: 0.330, Loss x: 0.121, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.348, Mask ratio: 0.986
+[2025-05-19 20:58:04,742][    INFO] Iters: 66, Total loss: 0.327, Loss x: 0.127, Loss s: 0.043, Loss w_fp: 0.016,  Loss contrast: 1.320, Mask ratio: 0.986
+[2025-05-19 20:58:10,817][    INFO] Iters: 77, Total loss: 0.324, Loss x: 0.130, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.302, Mask ratio: 0.986
+[2025-05-19 20:58:16,950][    INFO] Iters: 88, Total loss: 0.331, Loss x: 0.138, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.321, Mask ratio: 0.986
+[2025-05-19 20:59:04,540][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.20,IoU1:99.20
+[2025-05-19 20:59:04,540][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 78.67,IoU1:69.81
+[2025-05-19 20:59:04,541][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 88.94, MeanIoU1: 84.50
+
+[2025-05-19 20:59:04,573][    INFO] ===========> Epoch: 26, LR: 0.00351, Previous best: 85.61
+[2025-05-19 20:59:05,640][    INFO] Iters: 0, Total loss: 0.362, Loss x: 0.113, Loss s: 0.122, Loss w_fp: 0.038,  Loss contrast: 1.425, Mask ratio: 0.968
+[2025-05-19 20:59:11,853][    INFO] Iters: 11, Total loss: 0.384, Loss x: 0.177, Loss s: 0.051, Loss w_fp: 0.051,  Loss contrast: 1.467, Mask ratio: 0.983
+[2025-05-19 20:59:17,821][    INFO] Iters: 22, Total loss: 0.344, Loss x: 0.183, Loss s: 0.046, Loss w_fp: 0.037,  Loss contrast: 1.270, Mask ratio: 0.985
+[2025-05-19 20:59:23,955][    INFO] Iters: 33, Total loss: 0.350, Loss x: 0.184, Loss s: 0.059, Loss w_fp: 0.032,  Loss contrast: 1.292, Mask ratio: 0.981
+[2025-05-19 20:59:30,225][    INFO] Iters: 44, Total loss: 0.352, Loss x: 0.171, Loss s: 0.054, Loss w_fp: 0.029,  Loss contrast: 1.333, Mask ratio: 0.980
+[2025-05-19 20:59:36,445][    INFO] Iters: 55, Total loss: 0.350, Loss x: 0.160, Loss s: 0.051, Loss w_fp: 0.026,  Loss contrast: 1.354, Mask ratio: 0.982
+[2025-05-19 20:59:42,609][    INFO] Iters: 66, Total loss: 0.348, Loss x: 0.157, Loss s: 0.053, Loss w_fp: 0.024,  Loss contrast: 1.350, Mask ratio: 0.982
+[2025-05-19 20:59:48,778][    INFO] Iters: 77, Total loss: 0.345, Loss x: 0.152, Loss s: 0.050, Loss w_fp: 0.024,  Loss contrast: 1.344, Mask ratio: 0.983
+[2025-05-19 20:59:54,960][    INFO] Iters: 88, Total loss: 0.346, Loss x: 0.151, Loss s: 0.049, Loss w_fp: 0.023,  Loss contrast: 1.357, Mask ratio: 0.984
+[2025-05-19 21:00:42,660][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.09,IoU1:99.09
+[2025-05-19 21:00:42,660][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.53,IoU1:68.37
+[2025-05-19 21:00:42,661][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.81, MeanIoU1: 83.73
+
+[2025-05-19 21:00:42,723][    INFO] ===========> Epoch: 27, LR: 0.00345, Previous best: 85.61
+[2025-05-19 21:00:43,843][    INFO] Iters: 0, Total loss: 0.337, Loss x: 0.100, Loss s: 0.029, Loss w_fp: 0.013,  Loss contrast: 1.441, Mask ratio: 0.995
+[2025-05-19 21:00:50,097][    INFO] Iters: 11, Total loss: 0.370, Loss x: 0.164, Loss s: 0.041, Loss w_fp: 0.013,  Loss contrast: 1.466, Mask ratio: 0.988
+[2025-05-19 21:00:56,090][    INFO] Iters: 22, Total loss: 0.350, Loss x: 0.147, Loss s: 0.051, Loss w_fp: 0.016,  Loss contrast: 1.389, Mask ratio: 0.985
+[2025-05-19 21:01:02,241][    INFO] Iters: 33, Total loss: 0.352, Loss x: 0.139, Loss s: 0.052, Loss w_fp: 0.018,  Loss contrast: 1.410, Mask ratio: 0.983
+[2025-05-19 21:01:08,476][    INFO] Iters: 44, Total loss: 0.345, Loss x: 0.132, Loss s: 0.052, Loss w_fp: 0.018,  Loss contrast: 1.388, Mask ratio: 0.985
+[2025-05-19 21:01:14,538][    INFO] Iters: 55, Total loss: 0.335, Loss x: 0.128, Loss s: 0.051, Loss w_fp: 0.018,  Loss contrast: 1.352, Mask ratio: 0.985
+[2025-05-19 21:01:20,488][    INFO] Iters: 66, Total loss: 0.321, Loss x: 0.126, Loss s: 0.049, Loss w_fp: 0.017,  Loss contrast: 1.285, Mask ratio: 0.986
+[2025-05-19 21:01:26,662][    INFO] Iters: 77, Total loss: 0.321, Loss x: 0.122, Loss s: 0.051, Loss w_fp: 0.017,  Loss contrast: 1.290, Mask ratio: 0.986
+[2025-05-19 21:01:32,833][    INFO] Iters: 88, Total loss: 0.319, Loss x: 0.125, Loss s: 0.049, Loss w_fp: 0.017,  Loss contrast: 1.280, Mask ratio: 0.986
+[2025-05-19 21:02:20,680][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.04,IoU1:99.04
+[2025-05-19 21:02:20,680][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.99,IoU1:67.50
+[2025-05-19 21:02:20,680][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.02, MeanIoU1: 83.27
+
+[2025-05-19 21:02:20,744][    INFO] ===========> Epoch: 28, LR: 0.00339, Previous best: 85.61
+[2025-05-19 21:02:21,838][    INFO] Iters: 0, Total loss: 0.383, Loss x: 0.215, Loss s: 0.046, Loss w_fp: 0.019,  Loss contrast: 1.419, Mask ratio: 0.954
+[2025-05-19 21:02:27,954][    INFO] Iters: 11, Total loss: 0.326, Loss x: 0.115, Loss s: 0.053, Loss w_fp: 0.023,  Loss contrast: 1.326, Mask ratio: 0.980
+[2025-05-19 21:02:34,164][    INFO] Iters: 22, Total loss: 0.347, Loss x: 0.146, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 1.377, Mask ratio: 0.983
+[2025-05-19 21:02:40,403][    INFO] Iters: 33, Total loss: 0.351, Loss x: 0.140, Loss s: 0.048, Loss w_fp: 0.021,  Loss contrast: 1.404, Mask ratio: 0.982
+[2025-05-19 21:02:46,408][    INFO] Iters: 44, Total loss: 0.354, Loss x: 0.147, Loss s: 0.052, Loss w_fp: 0.020,  Loss contrast: 1.406, Mask ratio: 0.984
+[2025-05-19 21:02:52,570][    INFO] Iters: 55, Total loss: 0.355, Loss x: 0.142, Loss s: 0.054, Loss w_fp: 0.021,  Loss contrast: 1.416, Mask ratio: 0.983
+[2025-05-19 21:02:58,652][    INFO] Iters: 66, Total loss: 0.346, Loss x: 0.141, Loss s: 0.052, Loss w_fp: 0.020,  Loss contrast: 1.378, Mask ratio: 0.984
+[2025-05-19 21:03:04,662][    INFO] Iters: 77, Total loss: 0.337, Loss x: 0.141, Loss s: 0.050, Loss w_fp: 0.019,  Loss contrast: 1.333, Mask ratio: 0.985
+[2025-05-19 21:03:10,773][    INFO] Iters: 88, Total loss: 0.334, Loss x: 0.142, Loss s: 0.050, Loss w_fp: 0.019,  Loss contrast: 1.316, Mask ratio: 0.985
+[2025-05-19 21:03:58,460][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.13,IoU1:99.13
+[2025-05-19 21:03:58,460][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.45,IoU1:69.15
+[2025-05-19 21:03:58,460][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.79, MeanIoU1: 84.14
+
+[2025-05-19 21:03:58,494][    INFO] ===========> Epoch: 29, LR: 0.00333, Previous best: 85.61
+[2025-05-19 21:03:59,654][    INFO] Iters: 0, Total loss: 0.364, Loss x: 0.127, Loss s: 0.082, Loss w_fp: 0.021,  Loss contrast: 1.464, Mask ratio: 0.987
+[2025-05-19 21:04:05,754][    INFO] Iters: 11, Total loss: 0.330, Loss x: 0.124, Loss s: 0.053, Loss w_fp: 0.021,  Loss contrast: 1.329, Mask ratio: 0.984
+[2025-05-19 21:04:11,902][    INFO] Iters: 22, Total loss: 0.338, Loss x: 0.119, Loss s: 0.050, Loss w_fp: 0.020,  Loss contrast: 1.382, Mask ratio: 0.984
+[2025-05-19 21:04:18,134][    INFO] Iters: 33, Total loss: 0.346, Loss x: 0.128, Loss s: 0.052, Loss w_fp: 0.019,  Loss contrast: 1.406, Mask ratio: 0.984
+[2025-05-19 21:04:24,476][    INFO] Iters: 44, Total loss: 0.349, Loss x: 0.128, Loss s: 0.047, Loss w_fp: 0.020,  Loss contrast: 1.420, Mask ratio: 0.985
+[2025-05-19 21:04:30,653][    INFO] Iters: 55, Total loss: 0.346, Loss x: 0.134, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 1.401, Mask ratio: 0.985
+[2025-05-19 21:04:36,889][    INFO] Iters: 66, Total loss: 0.348, Loss x: 0.134, Loss s: 0.045, Loss w_fp: 0.019,  Loss contrast: 1.411, Mask ratio: 0.985
+[2025-05-19 21:04:42,954][    INFO] Iters: 77, Total loss: 0.345, Loss x: 0.133, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.397, Mask ratio: 0.985
+[2025-05-19 21:04:49,058][    INFO] Iters: 88, Total loss: 0.345, Loss x: 0.131, Loss s: 0.044, Loss w_fp: 0.018,  Loss contrast: 1.402, Mask ratio: 0.985
+[2025-05-19 21:05:37,169][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 21:05:37,169][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 79.98,IoU1:72.25
+[2025-05-19 21:05:37,169][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.63, MeanIoU1: 85.76
+
+[2025-05-19 21:05:37,202][    INFO] ===========> Epoch: 30, LR: 0.00328, Previous best: 85.76
+[2025-05-19 21:05:38,311][    INFO] Iters: 0, Total loss: 0.313, Loss x: 0.091, Loss s: 0.032, Loss w_fp: 0.008,  Loss contrast: 1.341, Mask ratio: 0.992
+[2025-05-19 21:05:44,492][    INFO] Iters: 11, Total loss: 0.323, Loss x: 0.127, Loss s: 0.025, Loss w_fp: 0.014,  Loss contrast: 1.323, Mask ratio: 0.986
+[2025-05-19 21:05:50,595][    INFO] Iters: 22, Total loss: 0.323, Loss x: 0.126, Loss s: 0.029, Loss w_fp: 0.015,  Loss contrast: 1.318, Mask ratio: 0.987
+[2025-05-19 21:05:56,588][    INFO] Iters: 33, Total loss: 0.301, Loss x: 0.111, Loss s: 0.032, Loss w_fp: 0.017,  Loss contrast: 1.233, Mask ratio: 0.985
+[2025-05-19 21:06:02,654][    INFO] Iters: 44, Total loss: 0.297, Loss x: 0.106, Loss s: 0.035, Loss w_fp: 0.017,  Loss contrast: 1.222, Mask ratio: 0.985
+[2025-05-19 21:06:09,020][    INFO] Iters: 55, Total loss: 0.310, Loss x: 0.114, Loss s: 0.035, Loss w_fp: 0.017,  Loss contrast: 1.271, Mask ratio: 0.986
+[2025-05-19 21:06:15,233][    INFO] Iters: 66, Total loss: 0.316, Loss x: 0.122, Loss s: 0.038, Loss w_fp: 0.018,  Loss contrast: 1.281, Mask ratio: 0.986
+[2025-05-19 21:06:21,352][    INFO] Iters: 77, Total loss: 0.316, Loss x: 0.127, Loss s: 0.040, Loss w_fp: 0.018,  Loss contrast: 1.270, Mask ratio: 0.985
+[2025-05-19 21:06:27,430][    INFO] Iters: 88, Total loss: 0.319, Loss x: 0.131, Loss s: 0.038, Loss w_fp: 0.018,  Loss contrast: 1.276, Mask ratio: 0.985
+[2025-05-19 21:07:15,420][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.29,IoU1:99.29
+[2025-05-19 21:07:15,420][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 79.59,IoU1:72.27
+[2025-05-19 21:07:15,420][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.44, MeanIoU1: 85.78
+
+[2025-05-19 21:07:15,455][    INFO] ===========> Epoch: 31, LR: 0.00322, Previous best: 85.78
+[2025-05-19 21:07:16,534][    INFO] Iters: 0, Total loss: 0.326, Loss x: 0.072, Loss s: 0.036, Loss w_fp: 0.007,  Loss contrast: 1.442, Mask ratio: 0.995
+[2025-05-19 21:07:22,611][    INFO] Iters: 11, Total loss: 0.323, Loss x: 0.128, Loss s: 0.032, Loss w_fp: 0.011,  Loss contrast: 1.317, Mask ratio: 0.988
+[2025-05-19 21:07:28,731][    INFO] Iters: 22, Total loss: 0.309, Loss x: 0.119, Loss s: 0.032, Loss w_fp: 0.014,  Loss contrast: 1.260, Mask ratio: 0.987
+[2025-05-19 21:07:34,918][    INFO] Iters: 33, Total loss: 0.324, Loss x: 0.124, Loss s: 0.037, Loss w_fp: 0.015,  Loss contrast: 1.321, Mask ratio: 0.985
+[2025-05-19 21:07:41,116][    INFO] Iters: 44, Total loss: 0.328, Loss x: 0.120, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.352, Mask ratio: 0.986
+[2025-05-19 21:07:47,199][    INFO] Iters: 55, Total loss: 0.330, Loss x: 0.119, Loss s: 0.036, Loss w_fp: 0.015,  Loss contrast: 1.361, Mask ratio: 0.986
+[2025-05-19 21:07:53,293][    INFO] Iters: 66, Total loss: 0.327, Loss x: 0.123, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.333, Mask ratio: 0.986
+[2025-05-19 21:07:59,396][    INFO] Iters: 77, Total loss: 0.326, Loss x: 0.121, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.331, Mask ratio: 0.986
+[2025-05-19 21:08:05,728][    INFO] Iters: 88, Total loss: 0.329, Loss x: 0.120, Loss s: 0.040, Loss w_fp: 0.017,  Loss contrast: 1.346, Mask ratio: 0.986
+[2025-05-19 21:08:53,733][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.24,IoU1:99.24
+[2025-05-19 21:08:53,733][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.33,IoU1:71.69
+[2025-05-19 21:08:53,733][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.29, MeanIoU1: 85.46
+
+[2025-05-19 21:08:53,797][    INFO] ===========> Epoch: 32, LR: 0.00316, Previous best: 85.78
+[2025-05-19 21:08:54,909][    INFO] Iters: 0, Total loss: 0.327, Loss x: 0.067, Loss s: 0.041, Loss w_fp: 0.013,  Loss contrast: 1.448, Mask ratio: 0.987
+[2025-05-19 21:09:00,927][    INFO] Iters: 11, Total loss: 0.299, Loss x: 0.117, Loss s: 0.043, Loss w_fp: 0.016,  Loss contrast: 1.199, Mask ratio: 0.986
+[2025-05-19 21:09:06,939][    INFO] Iters: 22, Total loss: 0.296, Loss x: 0.121, Loss s: 0.034, Loss w_fp: 0.015,  Loss contrast: 1.191, Mask ratio: 0.988
+[2025-05-19 21:09:13,055][    INFO] Iters: 33, Total loss: 0.294, Loss x: 0.114, Loss s: 0.038, Loss w_fp: 0.017,  Loss contrast: 1.188, Mask ratio: 0.988
+[2025-05-19 21:09:19,217][    INFO] Iters: 44, Total loss: 0.303, Loss x: 0.120, Loss s: 0.041, Loss w_fp: 0.017,  Loss contrast: 1.216, Mask ratio: 0.987
+[2025-05-19 21:09:25,423][    INFO] Iters: 55, Total loss: 0.314, Loss x: 0.126, Loss s: 0.039, Loss w_fp: 0.018,  Loss contrast: 1.263, Mask ratio: 0.988
+[2025-05-19 21:09:31,683][    INFO] Iters: 66, Total loss: 0.320, Loss x: 0.125, Loss s: 0.040, Loss w_fp: 0.018,  Loss contrast: 1.291, Mask ratio: 0.987
+[2025-05-19 21:09:37,957][    INFO] Iters: 77, Total loss: 0.324, Loss x: 0.124, Loss s: 0.041, Loss w_fp: 0.018,  Loss contrast: 1.315, Mask ratio: 0.987
+[2025-05-19 21:09:44,167][    INFO] Iters: 88, Total loss: 0.327, Loss x: 0.120, Loss s: 0.043, Loss w_fp: 0.018,  Loss contrast: 1.332, Mask ratio: 0.986
+[2025-05-19 21:10:33,184][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.25,IoU1:99.25
+[2025-05-19 21:10:33,185][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.97,IoU1:71.94
+[2025-05-19 21:10:33,185][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.11, MeanIoU1: 85.59
+
+[2025-05-19 21:10:33,217][    INFO] ===========> Epoch: 33, LR: 0.00310, Previous best: 85.78
+[2025-05-19 21:10:34,336][    INFO] Iters: 0, Total loss: 0.346, Loss x: 0.126, Loss s: 0.010, Loss w_fp: 0.012,  Loss contrast: 1.455, Mask ratio: 0.991
+[2025-05-19 21:10:40,351][    INFO] Iters: 11, Total loss: 0.291, Loss x: 0.092, Loss s: 0.047, Loss w_fp: 0.018,  Loss contrast: 1.207, Mask ratio: 0.985
+[2025-05-19 21:10:46,736][    INFO] Iters: 22, Total loss: 0.323, Loss x: 0.115, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.332, Mask ratio: 0.987
+[2025-05-19 21:10:52,904][    INFO] Iters: 33, Total loss: 0.324, Loss x: 0.121, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.325, Mask ratio: 0.987
+[2025-05-19 21:10:59,021][    INFO] Iters: 44, Total loss: 0.315, Loss x: 0.116, Loss s: 0.036, Loss w_fp: 0.016,  Loss contrast: 1.291, Mask ratio: 0.987
+[2025-05-19 21:11:05,186][    INFO] Iters: 55, Total loss: 0.322, Loss x: 0.118, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.322, Mask ratio: 0.986
+[2025-05-19 21:11:11,288][    INFO] Iters: 66, Total loss: 0.323, Loss x: 0.121, Loss s: 0.038, Loss w_fp: 0.017,  Loss contrast: 1.318, Mask ratio: 0.986
+[2025-05-19 21:11:17,226][    INFO] Iters: 77, Total loss: 0.311, Loss x: 0.120, Loss s: 0.038, Loss w_fp: 0.017,  Loss contrast: 1.262, Mask ratio: 0.986
+[2025-05-19 21:11:23,129][    INFO] Iters: 88, Total loss: 0.310, Loss x: 0.120, Loss s: 0.042, Loss w_fp: 0.017,  Loss contrast: 1.251, Mask ratio: 0.986
+[2025-05-19 21:12:11,310][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.20,IoU1:99.20
+[2025-05-19 21:12:11,311][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.92,IoU1:71.04
+[2025-05-19 21:12:11,311][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.56, MeanIoU1: 85.12
+
+[2025-05-19 21:12:11,372][    INFO] ===========> Epoch: 34, LR: 0.00304, Previous best: 85.78
+[2025-05-19 21:12:12,496][    INFO] Iters: 0, Total loss: 0.445, Loss x: 0.318, Loss s: 0.080, Loss w_fp: 0.006,  Loss contrast: 1.502, Mask ratio: 0.995
+[2025-05-19 21:12:18,579][    INFO] Iters: 11, Total loss: 0.299, Loss x: 0.112, Loss s: 0.044, Loss w_fp: 0.015,  Loss contrast: 1.210, Mask ratio: 0.989
+[2025-05-19 21:12:24,787][    INFO] Iters: 22, Total loss: 0.321, Loss x: 0.113, Loss s: 0.045, Loss w_fp: 0.018,  Loss contrast: 1.318, Mask ratio: 0.987
+[2025-05-19 21:12:30,843][    INFO] Iters: 33, Total loss: 0.305, Loss x: 0.111, Loss s: 0.049, Loss w_fp: 0.018,  Loss contrast: 1.236, Mask ratio: 0.985
+[2025-05-19 21:12:37,089][    INFO] Iters: 44, Total loss: 0.314, Loss x: 0.126, Loss s: 0.046, Loss w_fp: 0.018,  Loss contrast: 1.256, Mask ratio: 0.986
+[2025-05-19 21:12:43,246][    INFO] Iters: 55, Total loss: 0.322, Loss x: 0.129, Loss s: 0.042, Loss w_fp: 0.018,  Loss contrast: 1.292, Mask ratio: 0.986
+[2025-05-19 21:12:49,352][    INFO] Iters: 66, Total loss: 0.318, Loss x: 0.130, Loss s: 0.043, Loss w_fp: 0.017,  Loss contrast: 1.273, Mask ratio: 0.986
+[2025-05-19 21:12:55,277][    INFO] Iters: 77, Total loss: 0.312, Loss x: 0.130, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.240, Mask ratio: 0.986
+[2025-05-19 21:13:01,493][    INFO] Iters: 88, Total loss: 0.317, Loss x: 0.130, Loss s: 0.040, Loss w_fp: 0.016,  Loss contrast: 1.266, Mask ratio: 0.987
+[2025-05-19 21:13:49,721][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.23,IoU1:99.23
+[2025-05-19 21:13:49,722][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.09,IoU1:70.90
+[2025-05-19 21:13:49,722][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.66, MeanIoU1: 85.07
+
+[2025-05-19 21:13:49,755][    INFO] ===========> Epoch: 35, LR: 0.00298, Previous best: 85.78
+[2025-05-19 21:13:50,884][    INFO] Iters: 0, Total loss: 0.357, Loss x: 0.118, Loss s: 0.047, Loss w_fp: 0.035,  Loss contrast: 1.470, Mask ratio: 0.982
+[2025-05-19 21:13:57,118][    INFO] Iters: 11, Total loss: 0.346, Loss x: 0.122, Loss s: 0.034, Loss w_fp: 0.015,  Loss contrast: 1.440, Mask ratio: 0.987
+[2025-05-19 21:14:03,136][    INFO] Iters: 22, Total loss: 0.328, Loss x: 0.106, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.369, Mask ratio: 0.986
+[2025-05-19 21:14:09,178][    INFO] Iters: 33, Total loss: 0.320, Loss x: 0.118, Loss s: 0.038, Loss w_fp: 0.014,  Loss contrast: 1.310, Mask ratio: 0.987
+[2025-05-19 21:14:15,401][    INFO] Iters: 44, Total loss: 0.327, Loss x: 0.119, Loss s: 0.040, Loss w_fp: 0.016,  Loss contrast: 1.339, Mask ratio: 0.986
+[2025-05-19 21:14:21,678][    INFO] Iters: 55, Total loss: 0.333, Loss x: 0.125, Loss s: 0.040, Loss w_fp: 0.016,  Loss contrast: 1.362, Mask ratio: 0.986
+[2025-05-19 21:14:27,849][    INFO] Iters: 66, Total loss: 0.337, Loss x: 0.127, Loss s: 0.041, Loss w_fp: 0.017,  Loss contrast: 1.373, Mask ratio: 0.986
+[2025-05-19 21:14:33,987][    INFO] Iters: 77, Total loss: 0.337, Loss x: 0.132, Loss s: 0.040, Loss w_fp: 0.017,  Loss contrast: 1.366, Mask ratio: 0.986
+[2025-05-19 21:14:40,218][    INFO] Iters: 88, Total loss: 0.340, Loss x: 0.134, Loss s: 0.040, Loss w_fp: 0.017,  Loss contrast: 1.376, Mask ratio: 0.986
+[2025-05-19 21:15:28,314][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.19,IoU1:99.19
+[2025-05-19 21:15:28,314][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.59,IoU1:70.31
+[2025-05-19 21:15:28,314][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.89, MeanIoU1: 84.75
+
+[2025-05-19 21:15:28,347][    INFO] ===========> Epoch: 36, LR: 0.00292, Previous best: 85.78
+[2025-05-19 21:15:29,453][    INFO] Iters: 0, Total loss: 0.365, Loss x: 0.155, Loss s: 0.028, Loss w_fp: 0.013,  Loss contrast: 1.477, Mask ratio: 0.989
+[2025-05-19 21:15:35,420][    INFO] Iters: 11, Total loss: 0.305, Loss x: 0.134, Loss s: 0.047, Loss w_fp: 0.016,  Loss contrast: 1.193, Mask ratio: 0.984
+[2025-05-19 21:15:41,669][    INFO] Iters: 22, Total loss: 0.323, Loss x: 0.126, Loss s: 0.035, Loss w_fp: 0.016,  Loss contrast: 1.309, Mask ratio: 0.985
+[2025-05-19 21:15:47,838][    INFO] Iters: 33, Total loss: 0.330, Loss x: 0.123, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.352, Mask ratio: 0.985
+[2025-05-19 21:15:54,017][    INFO] Iters: 44, Total loss: 0.333, Loss x: 0.120, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.373, Mask ratio: 0.985
+[2025-05-19 21:15:59,908][    INFO] Iters: 55, Total loss: 0.321, Loss x: 0.120, Loss s: 0.040, Loss w_fp: 0.017,  Loss contrast: 1.309, Mask ratio: 0.985
+[2025-05-19 21:16:06,203][    INFO] Iters: 66, Total loss: 0.328, Loss x: 0.128, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.330, Mask ratio: 0.985
+[2025-05-19 21:16:12,199][    INFO] Iters: 77, Total loss: 0.325, Loss x: 0.130, Loss s: 0.040, Loss w_fp: 0.016,  Loss contrast: 1.309, Mask ratio: 0.985
+[2025-05-19 21:16:18,440][    INFO] Iters: 88, Total loss: 0.325, Loss x: 0.129, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.310, Mask ratio: 0.986
+[2025-05-19 21:17:07,249][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.23,IoU1:99.23
+[2025-05-19 21:17:07,249][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.22,IoU1:71.78
+[2025-05-19 21:17:07,249][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.72, MeanIoU1: 85.50
+
+[2025-05-19 21:17:07,312][    INFO] ===========> Epoch: 37, LR: 0.00286, Previous best: 85.78
+[2025-05-19 21:17:08,425][    INFO] Iters: 0, Total loss: 0.327, Loss x: 0.080, Loss s: 0.022, Loss w_fp: 0.019,  Loss contrast: 1.435, Mask ratio: 0.989
+[2025-05-19 21:17:14,624][    INFO] Iters: 11, Total loss: 0.336, Loss x: 0.096, Loss s: 0.038, Loss w_fp: 0.016,  Loss contrast: 1.436, Mask ratio: 0.982
+[2025-05-19 21:17:20,894][    INFO] Iters: 22, Total loss: 0.335, Loss x: 0.092, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.439, Mask ratio: 0.986
+[2025-05-19 21:17:26,948][    INFO] Iters: 33, Total loss: 0.332, Loss x: 0.103, Loss s: 0.049, Loss w_fp: 0.016,  Loss contrast: 1.390, Mask ratio: 0.985
+[2025-05-19 21:17:33,294][    INFO] Iters: 44, Total loss: 0.339, Loss x: 0.116, Loss s: 0.044, Loss w_fp: 0.015,  Loss contrast: 1.407, Mask ratio: 0.986
+[2025-05-19 21:17:39,463][    INFO] Iters: 55, Total loss: 0.333, Loss x: 0.121, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.364, Mask ratio: 0.987
+[2025-05-19 21:17:45,524][    INFO] Iters: 66, Total loss: 0.327, Loss x: 0.123, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.335, Mask ratio: 0.986
+[2025-05-19 21:17:51,458][    INFO] Iters: 77, Total loss: 0.323, Loss x: 0.123, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.311, Mask ratio: 0.986
+[2025-05-19 21:17:57,497][    INFO] Iters: 88, Total loss: 0.318, Loss x: 0.119, Loss s: 0.043, Loss w_fp: 0.015,  Loss contrast: 1.296, Mask ratio: 0.986
+[2025-05-19 21:18:46,135][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.31,IoU1:99.31
+[2025-05-19 21:18:46,135][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.01,IoU1:73.38
+[2025-05-19 21:18:46,135][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.16, MeanIoU1: 86.35
+
+[2025-05-19 21:18:46,167][    INFO] ===========> Epoch: 38, LR: 0.00280, Previous best: 86.35
+[2025-05-19 21:18:47,205][    INFO] Iters: 0, Total loss: 0.089, Loss x: 0.102, Loss s: 0.226, Loss w_fp: 0.016,  Loss contrast: 0.000, Mask ratio: 0.980
+[2025-05-19 21:18:53,384][    INFO] Iters: 11, Total loss: 0.322, Loss x: 0.110, Loss s: 0.056, Loss w_fp: 0.019,  Loss contrast: 1.316, Mask ratio: 0.986
+[2025-05-19 21:18:59,521][    INFO] Iters: 22, Total loss: 0.323, Loss x: 0.108, Loss s: 0.070, Loss w_fp: 0.019,  Loss contrast: 1.311, Mask ratio: 0.984
+[2025-05-19 21:19:05,794][    INFO] Iters: 33, Total loss: 0.330, Loss x: 0.108, Loss s: 0.063, Loss w_fp: 0.018,  Loss contrast: 1.354, Mask ratio: 0.984
+[2025-05-19 21:19:11,824][    INFO] Iters: 44, Total loss: 0.321, Loss x: 0.105, Loss s: 0.062, Loss w_fp: 0.018,  Loss contrast: 1.314, Mask ratio: 0.984
+[2025-05-19 21:19:17,853][    INFO] Iters: 55, Total loss: 0.316, Loss x: 0.109, Loss s: 0.056, Loss w_fp: 0.017,  Loss contrast: 1.286, Mask ratio: 0.985
+[2025-05-19 21:19:24,156][    INFO] Iters: 66, Total loss: 0.317, Loss x: 0.113, Loss s: 0.053, Loss w_fp: 0.016,  Loss contrast: 1.291, Mask ratio: 0.986
+[2025-05-19 21:19:30,376][    INFO] Iters: 77, Total loss: 0.321, Loss x: 0.113, Loss s: 0.053, Loss w_fp: 0.016,  Loss contrast: 1.312, Mask ratio: 0.986
+[2025-05-19 21:19:36,471][    INFO] Iters: 88, Total loss: 0.319, Loss x: 0.115, Loss s: 0.050, Loss w_fp: 0.016,  Loss contrast: 1.297, Mask ratio: 0.986
+[2025-05-19 21:20:23,673][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.26,IoU1:99.26
+[2025-05-19 21:20:23,673][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.43,IoU1:72.24
+[2025-05-19 21:20:23,673][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.34, MeanIoU1: 85.75
+
+[2025-05-19 21:20:23,706][    INFO] ===========> Epoch: 39, LR: 0.00274, Previous best: 86.35
+[2025-05-19 21:20:24,777][    INFO] Iters: 0, Total loss: 0.361, Loss x: 0.169, Loss s: 0.018, Loss w_fp: 0.011,  Loss contrast: 1.439, Mask ratio: 0.994
+[2025-05-19 21:20:30,942][    INFO] Iters: 11, Total loss: 0.348, Loss x: 0.121, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.439, Mask ratio: 0.987
+[2025-05-19 21:20:36,956][    INFO] Iters: 22, Total loss: 0.312, Loss x: 0.113, Loss s: 0.066, Loss w_fp: 0.019,  Loss contrast: 1.249, Mask ratio: 0.983
+[2025-05-19 21:20:43,103][    INFO] Iters: 33, Total loss: 0.319, Loss x: 0.109, Loss s: 0.055, Loss w_fp: 0.017,  Loss contrast: 1.302, Mask ratio: 0.984
+[2025-05-19 21:20:49,058][    INFO] Iters: 44, Total loss: 0.304, Loss x: 0.108, Loss s: 0.052, Loss w_fp: 0.018,  Loss contrast: 1.236, Mask ratio: 0.984
+[2025-05-19 21:20:55,439][    INFO] Iters: 55, Total loss: 0.312, Loss x: 0.106, Loss s: 0.052, Loss w_fp: 0.019,  Loss contrast: 1.279, Mask ratio: 0.984
+[2025-05-19 21:21:01,542][    INFO] Iters: 66, Total loss: 0.315, Loss x: 0.102, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.302, Mask ratio: 0.985
+[2025-05-19 21:21:07,679][    INFO] Iters: 77, Total loss: 0.316, Loss x: 0.104, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.303, Mask ratio: 0.985
+[2025-05-19 21:21:13,903][    INFO] Iters: 88, Total loss: 0.320, Loss x: 0.107, Loss s: 0.048, Loss w_fp: 0.018,  Loss contrast: 1.321, Mask ratio: 0.986
+[2025-05-19 21:22:01,061][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.13,IoU1:99.13
+[2025-05-19 21:22:01,061][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.66,IoU1:69.65
+[2025-05-19 21:22:01,061][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.39, MeanIoU1: 84.39
+
+[2025-05-19 21:22:01,094][    INFO] ===========> Epoch: 40, LR: 0.00268, Previous best: 86.35
+[2025-05-19 21:22:02,213][    INFO] Iters: 0, Total loss: 0.339, Loss x: 0.095, Loss s: 0.042, Loss w_fp: 0.007,  Loss contrast: 1.454, Mask ratio: 0.993
+[2025-05-19 21:22:08,282][    INFO] Iters: 11, Total loss: 0.313, Loss x: 0.082, Loss s: 0.072, Loss w_fp: 0.017,  Loss contrast: 1.311, Mask ratio: 0.985
+[2025-05-19 21:22:14,563][    INFO] Iters: 22, Total loss: 0.335, Loss x: 0.117, Loss s: 0.049, Loss w_fp: 0.016,  Loss contrast: 1.378, Mask ratio: 0.987
+[2025-05-19 21:22:20,712][    INFO] Iters: 33, Total loss: 0.330, Loss x: 0.114, Loss s: 0.051, Loss w_fp: 0.017,  Loss contrast: 1.356, Mask ratio: 0.987
+[2025-05-19 21:22:26,674][    INFO] Iters: 44, Total loss: 0.325, Loss x: 0.124, Loss s: 0.046, Loss w_fp: 0.016,  Loss contrast: 1.313, Mask ratio: 0.987
+[2025-05-19 21:22:32,746][    INFO] Iters: 55, Total loss: 0.323, Loss x: 0.122, Loss s: 0.044, Loss w_fp: 0.016,  Loss contrast: 1.310, Mask ratio: 0.987
+[2025-05-19 21:22:38,955][    INFO] Iters: 66, Total loss: 0.326, Loss x: 0.119, Loss s: 0.046, Loss w_fp: 0.015,  Loss contrast: 1.329, Mask ratio: 0.987
+[2025-05-19 21:22:45,160][    INFO] Iters: 77, Total loss: 0.324, Loss x: 0.116, Loss s: 0.044, Loss w_fp: 0.015,  Loss contrast: 1.327, Mask ratio: 0.987
+[2025-05-19 21:22:51,402][    INFO] Iters: 88, Total loss: 0.325, Loss x: 0.119, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.326, Mask ratio: 0.987
+[2025-05-19 21:23:38,963][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 21:23:38,963][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.64,IoU1:72.77
+[2025-05-19 21:23:38,963][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.46, MeanIoU1: 86.02
+
+[2025-05-19 21:23:38,995][    INFO] ===========> Epoch: 41, LR: 0.00262, Previous best: 86.35
+[2025-05-19 21:23:40,078][    INFO] Iters: 0, Total loss: 0.335, Loss x: 0.090, Loss s: 0.039, Loss w_fp: 0.017,  Loss contrast: 1.440, Mask ratio: 0.987
+[2025-05-19 21:23:46,194][    INFO] Iters: 11, Total loss: 0.319, Loss x: 0.113, Loss s: 0.034, Loss w_fp: 0.019,  Loss contrast: 1.316, Mask ratio: 0.984
+[2025-05-19 21:23:52,405][    INFO] Iters: 22, Total loss: 0.319, Loss x: 0.109, Loss s: 0.036, Loss w_fp: 0.017,  Loss contrast: 1.322, Mask ratio: 0.986
+[2025-05-19 21:23:58,847][    INFO] Iters: 33, Total loss: 0.299, Loss x: 0.102, Loss s: 0.039, Loss w_fp: 0.017,  Loss contrast: 1.235, Mask ratio: 0.986
+[2025-05-19 21:24:05,572][    INFO] Iters: 44, Total loss: 0.311, Loss x: 0.106, Loss s: 0.044, Loss w_fp: 0.017,  Loss contrast: 1.281, Mask ratio: 0.986
+[2025-05-19 21:24:11,700][    INFO] Iters: 55, Total loss: 0.311, Loss x: 0.102, Loss s: 0.044, Loss w_fp: 0.020,  Loss contrast: 1.289, Mask ratio: 0.986
+[2025-05-19 21:24:17,853][    INFO] Iters: 66, Total loss: 0.312, Loss x: 0.105, Loss s: 0.043, Loss w_fp: 0.020,  Loss contrast: 1.290, Mask ratio: 0.987
+[2025-05-19 21:24:24,044][    INFO] Iters: 77, Total loss: 0.314, Loss x: 0.108, Loss s: 0.041, Loss w_fp: 0.020,  Loss contrast: 1.293, Mask ratio: 0.986
+[2025-05-19 21:24:30,152][    INFO] Iters: 88, Total loss: 0.314, Loss x: 0.108, Loss s: 0.042, Loss w_fp: 0.020,  Loss contrast: 1.293, Mask ratio: 0.986
+[2025-05-19 21:25:17,976][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.22,IoU1:99.22
+[2025-05-19 21:25:17,977][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.45,IoU1:71.38
+[2025-05-19 21:25:17,977][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.34, MeanIoU1: 85.30
+
+[2025-05-19 21:25:18,009][    INFO] ===========> Epoch: 42, LR: 0.00256, Previous best: 86.35
+[2025-05-19 21:25:19,095][    INFO] Iters: 0, Total loss: 0.314, Loss x: 0.080, Loss s: 0.015, Loss w_fp: 0.020,  Loss contrast: 1.375, Mask ratio: 0.987
+[2025-05-19 21:25:25,316][    INFO] Iters: 11, Total loss: 0.351, Loss x: 0.128, Loss s: 0.040, Loss w_fp: 0.019,  Loss contrast: 1.441, Mask ratio: 0.986
+[2025-05-19 21:25:31,532][    INFO] Iters: 22, Total loss: 0.335, Loss x: 0.122, Loss s: 0.035, Loss w_fp: 0.018,  Loss contrast: 1.377, Mask ratio: 0.986
+[2025-05-19 21:25:37,675][    INFO] Iters: 33, Total loss: 0.343, Loss x: 0.138, Loss s: 0.034, Loss w_fp: 0.016,  Loss contrast: 1.389, Mask ratio: 0.987
+[2025-05-19 21:25:43,817][    INFO] Iters: 44, Total loss: 0.338, Loss x: 0.135, Loss s: 0.036, Loss w_fp: 0.016,  Loss contrast: 1.368, Mask ratio: 0.986
+[2025-05-19 21:25:49,964][    INFO] Iters: 55, Total loss: 0.334, Loss x: 0.130, Loss s: 0.038, Loss w_fp: 0.016,  Loss contrast: 1.357, Mask ratio: 0.986
+[2025-05-19 21:25:56,232][    INFO] Iters: 66, Total loss: 0.335, Loss x: 0.127, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.371, Mask ratio: 0.986
+[2025-05-19 21:26:02,467][    INFO] Iters: 77, Total loss: 0.336, Loss x: 0.123, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.380, Mask ratio: 0.986
+[2025-05-19 21:26:08,660][    INFO] Iters: 88, Total loss: 0.333, Loss x: 0.120, Loss s: 0.037, Loss w_fp: 0.018,  Loss contrast: 1.370, Mask ratio: 0.986
+[2025-05-19 21:26:56,890][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.32,IoU1:99.32
+[2025-05-19 21:26:56,890][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.61,IoU1:73.33
+[2025-05-19 21:26:56,890][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.96, MeanIoU1: 86.32
+
+[2025-05-19 21:26:56,923][    INFO] ===========> Epoch: 43, LR: 0.00250, Previous best: 86.35
+[2025-05-19 21:26:58,049][    INFO] Iters: 0, Total loss: 0.331, Loss x: 0.076, Loss s: 0.030, Loss w_fp: 0.021,  Loss contrast: 1.452, Mask ratio: 0.987
+[2025-05-19 21:27:04,263][    INFO] Iters: 11, Total loss: 0.334, Loss x: 0.092, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.431, Mask ratio: 0.988
+[2025-05-19 21:27:10,280][    INFO] Iters: 22, Total loss: 0.322, Loss x: 0.094, Loss s: 0.039, Loss w_fp: 0.017,  Loss contrast: 1.366, Mask ratio: 0.989
+[2025-05-19 21:27:16,486][    INFO] Iters: 33, Total loss: 0.332, Loss x: 0.107, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.390, Mask ratio: 0.989
+[2025-05-19 21:27:22,446][    INFO] Iters: 44, Total loss: 0.322, Loss x: 0.110, Loss s: 0.040, Loss w_fp: 0.017,  Loss contrast: 1.333, Mask ratio: 0.987
+[2025-05-19 21:27:28,780][    INFO] Iters: 55, Total loss: 0.322, Loss x: 0.113, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.332, Mask ratio: 0.988
+[2025-05-19 21:27:35,002][    INFO] Iters: 66, Total loss: 0.326, Loss x: 0.111, Loss s: 0.045, Loss w_fp: 0.017,  Loss contrast: 1.348, Mask ratio: 0.987
+[2025-05-19 21:27:41,071][    INFO] Iters: 77, Total loss: 0.324, Loss x: 0.107, Loss s: 0.046, Loss w_fp: 0.019,  Loss contrast: 1.342, Mask ratio: 0.986
+[2025-05-19 21:27:47,301][    INFO] Iters: 88, Total loss: 0.329, Loss x: 0.112, Loss s: 0.049, Loss w_fp: 0.019,  Loss contrast: 1.354, Mask ratio: 0.985
+[2025-05-19 21:28:35,455][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.19,IoU1:99.19
+[2025-05-19 21:28:35,456][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.92,IoU1:70.94
+[2025-05-19 21:28:35,456][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.56, MeanIoU1: 85.07
+
+[2025-05-19 21:28:35,488][    INFO] ===========> Epoch: 44, LR: 0.00244, Previous best: 86.35
+[2025-05-19 21:28:36,587][    INFO] Iters: 0, Total loss: 0.350, Loss x: 0.102, Loss s: 0.050, Loss w_fp: 0.016,  Loss contrast: 1.481, Mask ratio: 0.988
+[2025-05-19 21:28:42,691][    INFO] Iters: 11, Total loss: 0.318, Loss x: 0.116, Loss s: 0.038, Loss w_fp: 0.013,  Loss contrast: 1.306, Mask ratio: 0.988
+[2025-05-19 21:28:48,869][    INFO] Iters: 22, Total loss: 0.337, Loss x: 0.130, Loss s: 0.041, Loss w_fp: 0.017,  Loss contrast: 1.367, Mask ratio: 0.987
+[2025-05-19 21:28:54,986][    INFO] Iters: 33, Total loss: 0.334, Loss x: 0.134, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.347, Mask ratio: 0.987
+[2025-05-19 21:29:01,080][    INFO] Iters: 44, Total loss: 0.331, Loss x: 0.132, Loss s: 0.041, Loss w_fp: 0.016,  Loss contrast: 1.336, Mask ratio: 0.987
+[2025-05-19 21:29:07,329][    INFO] Iters: 55, Total loss: 0.335, Loss x: 0.131, Loss s: 0.040, Loss w_fp: 0.016,  Loss contrast: 1.355, Mask ratio: 0.986
+[2025-05-19 21:29:13,512][    INFO] Iters: 66, Total loss: 0.334, Loss x: 0.133, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.348, Mask ratio: 0.984
+[2025-05-19 21:29:19,572][    INFO] Iters: 77, Total loss: 0.330, Loss x: 0.128, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.339, Mask ratio: 0.985
+[2025-05-19 21:29:25,790][    INFO] Iters: 88, Total loss: 0.333, Loss x: 0.128, Loss s: 0.040, Loss w_fp: 0.016,  Loss contrast: 1.350, Mask ratio: 0.985
+[2025-05-19 21:30:14,221][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.35,IoU1:99.35
+[2025-05-19 21:30:14,221][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.62,IoU1:74.11
+[2025-05-19 21:30:14,221][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 89.98, MeanIoU1: 86.73
+
+[2025-05-19 21:30:14,255][    INFO] ===========> Epoch: 45, LR: 0.00238, Previous best: 86.73
+[2025-05-19 21:30:15,425][    INFO] Iters: 0, Total loss: 0.437, Loss x: 0.316, Loss s: 0.035, Loss w_fp: 0.008,  Loss contrast: 1.510, Mask ratio: 0.995
+[2025-05-19 21:30:21,499][    INFO] Iters: 11, Total loss: 0.328, Loss x: 0.132, Loss s: 0.047, Loss w_fp: 0.017,  Loss contrast: 1.308, Mask ratio: 0.986
+[2025-05-19 21:30:27,457][    INFO] Iters: 22, Total loss: 0.308, Loss x: 0.114, Loss s: 0.051, Loss w_fp: 0.020,  Loss contrast: 1.240, Mask ratio: 0.984
+[2025-05-19 21:30:33,623][    INFO] Iters: 33, Total loss: 0.307, Loss x: 0.122, Loss s: 0.049, Loss w_fp: 0.019,  Loss contrast: 1.223, Mask ratio: 0.985
+[2025-05-19 21:30:39,866][    INFO] Iters: 44, Total loss: 0.319, Loss x: 0.128, Loss s: 0.044, Loss w_fp: 0.017,  Loss contrast: 1.276, Mask ratio: 0.985
+[2025-05-19 21:30:45,900][    INFO] Iters: 55, Total loss: 0.308, Loss x: 0.122, Loss s: 0.045, Loss w_fp: 0.017,  Loss contrast: 1.231, Mask ratio: 0.985
+[2025-05-19 21:30:52,129][    INFO] Iters: 66, Total loss: 0.313, Loss x: 0.120, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.265, Mask ratio: 0.985
+[2025-05-19 21:30:58,093][    INFO] Iters: 77, Total loss: 0.309, Loss x: 0.119, Loss s: 0.042, Loss w_fp: 0.017,  Loss contrast: 1.250, Mask ratio: 0.985
+[2025-05-19 21:31:04,305][    INFO] Iters: 88, Total loss: 0.313, Loss x: 0.118, Loss s: 0.041, Loss w_fp: 0.016,  Loss contrast: 1.272, Mask ratio: 0.985
+[2025-05-19 21:31:52,349][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.23,IoU1:99.23
+[2025-05-19 21:31:52,349][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.53,IoU1:71.89
+[2025-05-19 21:31:52,349][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.88, MeanIoU1: 85.56
+
+[2025-05-19 21:31:52,414][    INFO] ===========> Epoch: 46, LR: 0.00232, Previous best: 86.73
+[2025-05-19 21:31:53,520][    INFO] Iters: 0, Total loss: 0.338, Loss x: 0.084, Loss s: 0.052, Loss w_fp: 0.016,  Loss contrast: 1.455, Mask ratio: 0.989
+[2025-05-19 21:31:59,637][    INFO] Iters: 11, Total loss: 0.310, Loss x: 0.146, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.200, Mask ratio: 0.987
+[2025-05-19 21:32:05,827][    INFO] Iters: 22, Total loss: 0.317, Loss x: 0.127, Loss s: 0.061, Loss w_fp: 0.018,  Loss contrast: 1.256, Mask ratio: 0.988
+[2025-05-19 21:32:11,976][    INFO] Iters: 33, Total loss: 0.322, Loss x: 0.130, Loss s: 0.060, Loss w_fp: 0.019,  Loss contrast: 1.273, Mask ratio: 0.987
+[2025-05-19 21:32:18,092][    INFO] Iters: 44, Total loss: 0.322, Loss x: 0.129, Loss s: 0.053, Loss w_fp: 0.018,  Loss contrast: 1.281, Mask ratio: 0.987
+[2025-05-19 21:32:24,243][    INFO] Iters: 55, Total loss: 0.317, Loss x: 0.129, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.262, Mask ratio: 0.987
+[2025-05-19 21:32:30,215][    INFO] Iters: 66, Total loss: 0.310, Loss x: 0.129, Loss s: 0.048, Loss w_fp: 0.017,  Loss contrast: 1.227, Mask ratio: 0.987
+[2025-05-19 21:32:36,010][    INFO] Iters: 77, Total loss: 0.295, Loss x: 0.124, Loss s: 0.046, Loss w_fp: 0.017,  Loss contrast: 1.164, Mask ratio: 0.987
+[2025-05-19 21:32:42,184][    INFO] Iters: 88, Total loss: 0.294, Loss x: 0.120, Loss s: 0.045, Loss w_fp: 0.017,  Loss contrast: 1.166, Mask ratio: 0.987
+[2025-05-19 21:33:30,301][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 21:33:30,301][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.89,IoU1:72.89
+[2025-05-19 21:33:30,301][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.59, MeanIoU1: 86.09
+
+[2025-05-19 21:33:30,335][    INFO] ===========> Epoch: 47, LR: 0.00225, Previous best: 86.73
+[2025-05-19 21:33:31,455][    INFO] Iters: 0, Total loss: 0.349, Loss x: 0.126, Loss s: 0.031, Loss w_fp: 0.008,  Loss contrast: 1.452, Mask ratio: 0.991
+[2025-05-19 21:33:37,481][    INFO] Iters: 11, Total loss: 0.342, Loss x: 0.156, Loss s: 0.066, Loss w_fp: 0.020,  Loss contrast: 1.313, Mask ratio: 0.981
+[2025-05-19 21:33:43,584][    INFO] Iters: 22, Total loss: 0.319, Loss x: 0.134, Loss s: 0.057, Loss w_fp: 0.021,  Loss contrast: 1.252, Mask ratio: 0.984
+[2025-05-19 21:33:49,648][    INFO] Iters: 33, Total loss: 0.312, Loss x: 0.131, Loss s: 0.051, Loss w_fp: 0.018,  Loss contrast: 1.230, Mask ratio: 0.986
+[2025-05-19 21:33:55,847][    INFO] Iters: 44, Total loss: 0.315, Loss x: 0.125, Loss s: 0.056, Loss w_fp: 0.018,  Loss contrast: 1.251, Mask ratio: 0.985
+[2025-05-19 21:34:02,028][    INFO] Iters: 55, Total loss: 0.317, Loss x: 0.115, Loss s: 0.051, Loss w_fp: 0.017,  Loss contrast: 1.287, Mask ratio: 0.987
+[2025-05-19 21:34:08,162][    INFO] Iters: 66, Total loss: 0.321, Loss x: 0.114, Loss s: 0.051, Loss w_fp: 0.017,  Loss contrast: 1.311, Mask ratio: 0.986
+[2025-05-19 21:34:14,104][    INFO] Iters: 77, Total loss: 0.314, Loss x: 0.112, Loss s: 0.052, Loss w_fp: 0.018,  Loss contrast: 1.274, Mask ratio: 0.986
+[2025-05-19 21:34:20,235][    INFO] Iters: 88, Total loss: 0.314, Loss x: 0.114, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.276, Mask ratio: 0.986
+[2025-05-19 21:35:07,839][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.34,IoU1:99.34
+[2025-05-19 21:35:07,839][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 80.86,IoU1:73.99
+[2025-05-19 21:35:07,839][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.10, MeanIoU1: 86.67
+
+[2025-05-19 21:35:07,875][    INFO] ===========> Epoch: 48, LR: 0.00219, Previous best: 86.73
+[2025-05-19 21:35:08,983][    INFO] Iters: 0, Total loss: 0.316, Loss x: 0.044, Loss s: 0.023, Loss w_fp: 0.011,  Loss contrast: 1.457, Mask ratio: 0.989
+[2025-05-19 21:35:15,145][    INFO] Iters: 11, Total loss: 0.330, Loss x: 0.083, Loss s: 0.038, Loss w_fp: 0.014,  Loss contrast: 1.433, Mask ratio: 0.991
+[2025-05-19 21:35:21,143][    INFO] Iters: 22, Total loss: 0.324, Loss x: 0.125, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.314, Mask ratio: 0.988
+[2025-05-19 21:35:27,393][    INFO] Iters: 33, Total loss: 0.335, Loss x: 0.127, Loss s: 0.050, Loss w_fp: 0.015,  Loss contrast: 1.356, Mask ratio: 0.987
+[2025-05-19 21:35:33,592][    INFO] Iters: 44, Total loss: 0.336, Loss x: 0.134, Loss s: 0.046, Loss w_fp: 0.017,  Loss contrast: 1.349, Mask ratio: 0.987
+[2025-05-19 21:35:39,650][    INFO] Iters: 55, Total loss: 0.329, Loss x: 0.132, Loss s: 0.047, Loss w_fp: 0.017,  Loss contrast: 1.317, Mask ratio: 0.987
+[2025-05-19 21:35:45,657][    INFO] Iters: 66, Total loss: 0.329, Loss x: 0.130, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.315, Mask ratio: 0.984
+[2025-05-19 21:35:51,720][    INFO] Iters: 77, Total loss: 0.324, Loss x: 0.130, Loss s: 0.050, Loss w_fp: 0.018,  Loss contrast: 1.295, Mask ratio: 0.984
+[2025-05-19 21:35:57,955][    INFO] Iters: 88, Total loss: 0.329, Loss x: 0.129, Loss s: 0.054, Loss w_fp: 0.019,  Loss contrast: 1.313, Mask ratio: 0.984
+[2025-05-19 21:36:45,523][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.11,IoU1:99.11
+[2025-05-19 21:36:45,523][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.65,IoU1:68.78
+[2025-05-19 21:36:45,523][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.38, MeanIoU1: 83.94
+
+[2025-05-19 21:36:45,557][    INFO] ===========> Epoch: 49, LR: 0.00213, Previous best: 86.73
+[2025-05-19 21:36:46,622][    INFO] Iters: 0, Total loss: 0.449, Loss x: 0.351, Loss s: 0.050, Loss w_fp: 0.006,  Loss contrast: 1.486, Mask ratio: 0.995
+[2025-05-19 21:36:52,599][    INFO] Iters: 11, Total loss: 0.307, Loss x: 0.152, Loss s: 0.035, Loss w_fp: 0.013,  Loss contrast: 1.187, Mask ratio: 0.988
+[2025-05-19 21:36:58,792][    INFO] Iters: 22, Total loss: 0.308, Loss x: 0.126, Loss s: 0.036, Loss w_fp: 0.013,  Loss contrast: 1.240, Mask ratio: 0.988
+[2025-05-19 21:37:04,981][    INFO] Iters: 33, Total loss: 0.314, Loss x: 0.129, Loss s: 0.036, Loss w_fp: 0.014,  Loss contrast: 1.262, Mask ratio: 0.988
+[2025-05-19 21:37:11,232][    INFO] Iters: 44, Total loss: 0.319, Loss x: 0.121, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.305, Mask ratio: 0.987
+[2025-05-19 21:37:17,422][    INFO] Iters: 55, Total loss: 0.325, Loss x: 0.120, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.333, Mask ratio: 0.987
+[2025-05-19 21:37:23,561][    INFO] Iters: 66, Total loss: 0.328, Loss x: 0.118, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.350, Mask ratio: 0.986
+[2025-05-19 21:37:29,795][    INFO] Iters: 77, Total loss: 0.332, Loss x: 0.117, Loss s: 0.046, Loss w_fp: 0.016,  Loss contrast: 1.361, Mask ratio: 0.986
+[2025-05-19 21:37:35,920][    INFO] Iters: 88, Total loss: 0.327, Loss x: 0.117, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.339, Mask ratio: 0.986
+[2025-05-19 21:38:23,595][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 21:38:23,595][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.61,IoU1:73.13
+[2025-05-19 21:38:23,595][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.94, MeanIoU1: 86.20
+
+[2025-05-19 21:38:23,657][    INFO] ===========> Epoch: 50, LR: 0.00207, Previous best: 86.73
+[2025-05-19 21:38:24,709][    INFO] Iters: 0, Total loss: 0.316, Loss x: 0.035, Loss s: 0.062, Loss w_fp: 0.023,  Loss contrast: 1.423, Mask ratio: 0.980
+[2025-05-19 21:38:30,799][    INFO] Iters: 11, Total loss: 0.337, Loss x: 0.097, Loss s: 0.059, Loss w_fp: 0.018,  Loss contrast: 1.414, Mask ratio: 0.984
+[2025-05-19 21:38:37,010][    INFO] Iters: 22, Total loss: 0.335, Loss x: 0.118, Loss s: 0.047, Loss w_fp: 0.019,  Loss contrast: 1.374, Mask ratio: 0.984
+[2025-05-19 21:38:43,007][    INFO] Iters: 33, Total loss: 0.310, Loss x: 0.110, Loss s: 0.044, Loss w_fp: 0.019,  Loss contrast: 1.268, Mask ratio: 0.985
+[2025-05-19 21:38:49,252][    INFO] Iters: 44, Total loss: 0.312, Loss x: 0.113, Loss s: 0.041, Loss w_fp: 0.018,  Loss contrast: 1.277, Mask ratio: 0.986
+[2025-05-19 21:38:55,281][    INFO] Iters: 55, Total loss: 0.305, Loss x: 0.118, Loss s: 0.039, Loss w_fp: 0.017,  Loss contrast: 1.234, Mask ratio: 0.987
+[2025-05-19 21:39:01,342][    INFO] Iters: 66, Total loss: 0.307, Loss x: 0.115, Loss s: 0.043, Loss w_fp: 0.017,  Loss contrast: 1.243, Mask ratio: 0.986
+[2025-05-19 21:39:07,603][    INFO] Iters: 77, Total loss: 0.309, Loss x: 0.110, Loss s: 0.042, Loss w_fp: 0.017,  Loss contrast: 1.268, Mask ratio: 0.986
+[2025-05-19 21:39:13,751][    INFO] Iters: 88, Total loss: 0.312, Loss x: 0.108, Loss s: 0.041, Loss w_fp: 0.016,  Loss contrast: 1.289, Mask ratio: 0.987
+[2025-05-19 21:40:01,649][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.27,IoU1:99.27
+[2025-05-19 21:40:01,649][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.38,IoU1:72.88
+[2025-05-19 21:40:01,650][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.83, MeanIoU1: 86.08
+
+[2025-05-19 21:40:01,684][    INFO] ===========> Epoch: 51, LR: 0.00201, Previous best: 86.73
+[2025-05-19 21:40:02,779][    INFO] Iters: 0, Total loss: 0.356, Loss x: 0.159, Loss s: 0.019, Loss w_fp: 0.007,  Loss contrast: 1.437, Mask ratio: 0.993
+[2025-05-19 21:40:08,740][    INFO] Iters: 11, Total loss: 0.290, Loss x: 0.098, Loss s: 0.048, Loss w_fp: 0.017,  Loss contrast: 1.189, Mask ratio: 0.986
+[2025-05-19 21:40:15,011][    INFO] Iters: 22, Total loss: 0.319, Loss x: 0.114, Loss s: 0.041, Loss w_fp: 0.014,  Loss contrast: 1.311, Mask ratio: 0.988
+[2025-05-19 21:40:21,099][    INFO] Iters: 33, Total loss: 0.317, Loss x: 0.111, Loss s: 0.041, Loss w_fp: 0.014,  Loss contrast: 1.309, Mask ratio: 0.988
+[2025-05-19 21:40:27,327][    INFO] Iters: 44, Total loss: 0.325, Loss x: 0.115, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.341, Mask ratio: 0.987
+[2025-05-19 21:40:33,526][    INFO] Iters: 55, Total loss: 0.328, Loss x: 0.114, Loss s: 0.039, Loss w_fp: 0.014,  Loss contrast: 1.359, Mask ratio: 0.987
+[2025-05-19 21:40:39,609][    INFO] Iters: 66, Total loss: 0.321, Loss x: 0.113, Loss s: 0.038, Loss w_fp: 0.014,  Loss contrast: 1.328, Mask ratio: 0.987
+[2025-05-19 21:40:45,766][    INFO] Iters: 77, Total loss: 0.320, Loss x: 0.111, Loss s: 0.038, Loss w_fp: 0.014,  Loss contrast: 1.324, Mask ratio: 0.987
+[2025-05-19 21:40:51,961][    INFO] Iters: 88, Total loss: 0.322, Loss x: 0.116, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.323, Mask ratio: 0.987
+[2025-05-19 21:41:41,420][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.30,IoU1:99.30
+[2025-05-19 21:41:41,420][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.37,IoU1:73.46
+[2025-05-19 21:41:41,420][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.83, MeanIoU1: 86.38
+
+[2025-05-19 21:41:41,454][    INFO] ===========> Epoch: 52, LR: 0.00194, Previous best: 86.73
+[2025-05-19 21:41:42,484][    INFO] Iters: 0, Total loss: 0.328, Loss x: 0.104, Loss s: 0.023, Loss w_fp: 0.019,  Loss contrast: 1.389, Mask ratio: 0.989
+[2025-05-19 21:41:48,780][    INFO] Iters: 11, Total loss: 0.338, Loss x: 0.103, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.434, Mask ratio: 0.985
+[2025-05-19 21:41:54,983][    INFO] Iters: 22, Total loss: 0.341, Loss x: 0.113, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.432, Mask ratio: 0.986
+[2025-05-19 21:42:01,350][    INFO] Iters: 33, Total loss: 0.344, Loss x: 0.113, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.430, Mask ratio: 0.985
+[2025-05-19 21:42:07,504][    INFO] Iters: 44, Total loss: 0.341, Loss x: 0.122, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.401, Mask ratio: 0.985
+[2025-05-19 21:42:13,593][    INFO] Iters: 55, Total loss: 0.334, Loss x: 0.117, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.380, Mask ratio: 0.986
+[2025-05-19 21:42:19,660][    INFO] Iters: 66, Total loss: 0.326, Loss x: 0.114, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.346, Mask ratio: 0.986
+[2025-05-19 21:42:25,776][    INFO] Iters: 77, Total loss: 0.326, Loss x: 0.116, Loss s: 0.044, Loss w_fp: 0.015,  Loss contrast: 1.341, Mask ratio: 0.986
+[2025-05-19 21:42:31,848][    INFO] Iters: 88, Total loss: 0.325, Loss x: 0.118, Loss s: 0.042, Loss w_fp: 0.014,  Loss contrast: 1.334, Mask ratio: 0.986
+[2025-05-19 21:43:19,779][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.26,IoU1:99.26
+[2025-05-19 21:43:19,780][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.76,IoU1:72.85
+[2025-05-19 21:43:19,780][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.01, MeanIoU1: 86.06
+
+[2025-05-19 21:43:19,843][    INFO] ===========> Epoch: 53, LR: 0.00188, Previous best: 86.73
+[2025-05-19 21:43:20,939][    INFO] Iters: 0, Total loss: 0.356, Loss x: 0.161, Loss s: 0.014, Loss w_fp: 0.011,  Loss contrast: 1.434, Mask ratio: 0.993
+[2025-05-19 21:43:27,064][    INFO] Iters: 11, Total loss: 0.354, Loss x: 0.149, Loss s: 0.034, Loss w_fp: 0.020,  Loss contrast: 1.421, Mask ratio: 0.990
+[2025-05-19 21:43:32,983][    INFO] Iters: 22, Total loss: 0.308, Loss x: 0.127, Loss s: 0.032, Loss w_fp: 0.015,  Loss contrast: 1.238, Mask ratio: 0.990
+[2025-05-19 21:43:39,105][    INFO] Iters: 33, Total loss: 0.309, Loss x: 0.120, Loss s: 0.033, Loss w_fp: 0.015,  Loss contrast: 1.256, Mask ratio: 0.990
+[2025-05-19 21:43:45,361][    INFO] Iters: 44, Total loss: 0.317, Loss x: 0.120, Loss s: 0.034, Loss w_fp: 0.014,  Loss contrast: 1.299, Mask ratio: 0.990
+[2025-05-19 21:43:51,206][    INFO] Iters: 55, Total loss: 0.308, Loss x: 0.121, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.246, Mask ratio: 0.988
+[2025-05-19 21:43:57,527][    INFO] Iters: 66, Total loss: 0.314, Loss x: 0.125, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.259, Mask ratio: 0.987
+[2025-05-19 21:44:03,669][    INFO] Iters: 77, Total loss: 0.314, Loss x: 0.121, Loss s: 0.047, Loss w_fp: 0.016,  Loss contrast: 1.264, Mask ratio: 0.986
+[2025-05-19 21:44:09,893][    INFO] Iters: 88, Total loss: 0.317, Loss x: 0.120, Loss s: 0.045, Loss w_fp: 0.015,  Loss contrast: 1.286, Mask ratio: 0.987
+[2025-05-19 21:44:57,578][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.35,IoU1:99.35
+[2025-05-19 21:44:57,578][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.90,IoU1:74.51
+[2025-05-19 21:44:57,578][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.63, MeanIoU1: 86.93
+
+[2025-05-19 21:44:57,613][    INFO] ===========> Epoch: 54, LR: 0.00182, Previous best: 86.93
+[2025-05-19 21:44:58,684][    INFO] Iters: 0, Total loss: 0.377, Loss x: 0.211, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.412, Mask ratio: 0.978
+[2025-05-19 21:45:04,791][    INFO] Iters: 11, Total loss: 0.317, Loss x: 0.114, Loss s: 0.031, Loss w_fp: 0.019,  Loss contrast: 1.309, Mask ratio: 0.986
+[2025-05-19 21:45:10,871][    INFO] Iters: 22, Total loss: 0.325, Loss x: 0.106, Loss s: 0.040, Loss w_fp: 0.018,  Loss contrast: 1.356, Mask ratio: 0.983
+[2025-05-19 21:45:16,878][    INFO] Iters: 33, Total loss: 0.324, Loss x: 0.115, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.336, Mask ratio: 0.986
+[2025-05-19 21:45:23,027][    INFO] Iters: 44, Total loss: 0.321, Loss x: 0.114, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.326, Mask ratio: 0.986
+[2025-05-19 21:45:29,261][    INFO] Iters: 55, Total loss: 0.326, Loss x: 0.124, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.325, Mask ratio: 0.986
+[2025-05-19 21:45:35,423][    INFO] Iters: 66, Total loss: 0.326, Loss x: 0.117, Loss s: 0.039, Loss w_fp: 0.017,  Loss contrast: 1.342, Mask ratio: 0.986
+[2025-05-19 21:45:41,582][    INFO] Iters: 77, Total loss: 0.329, Loss x: 0.116, Loss s: 0.038, Loss w_fp: 0.016,  Loss contrast: 1.357, Mask ratio: 0.986
+[2025-05-19 21:45:47,893][    INFO] Iters: 88, Total loss: 0.328, Loss x: 0.117, Loss s: 0.037, Loss w_fp: 0.016,  Loss contrast: 1.352, Mask ratio: 0.986
+[2025-05-19 21:46:35,787][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.39,IoU1:99.39
+[2025-05-19 21:46:35,787][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.83,IoU1:75.55
+[2025-05-19 21:46:35,787][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.61, MeanIoU1: 87.47
+
+[2025-05-19 21:46:35,822][    INFO] ===========> Epoch: 55, LR: 0.00176, Previous best: 87.47
+[2025-05-19 21:46:36,933][    INFO] Iters: 0, Total loss: 0.335, Loss x: 0.075, Loss s: 0.036, Loss w_fp: 0.012,  Loss contrast: 1.479, Mask ratio: 0.994
+[2025-05-19 21:46:43,148][    INFO] Iters: 11, Total loss: 0.308, Loss x: 0.097, Loss s: 0.030, Loss w_fp: 0.010,  Loss contrast: 1.308, Mask ratio: 0.991
+[2025-05-19 21:46:49,350][    INFO] Iters: 22, Total loss: 0.316, Loss x: 0.111, Loss s: 0.035, Loss w_fp: 0.013,  Loss contrast: 1.309, Mask ratio: 0.987
+[2025-05-19 21:46:55,535][    INFO] Iters: 33, Total loss: 0.320, Loss x: 0.103, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.342, Mask ratio: 0.987
+[2025-05-19 21:47:01,680][    INFO] Iters: 44, Total loss: 0.325, Loss x: 0.100, Loss s: 0.046, Loss w_fp: 0.016,  Loss contrast: 1.361, Mask ratio: 0.986
+[2025-05-19 21:47:07,763][    INFO] Iters: 55, Total loss: 0.327, Loss x: 0.112, Loss s: 0.044, Loss w_fp: 0.016,  Loss contrast: 1.350, Mask ratio: 0.986
+[2025-05-19 21:47:13,866][    INFO] Iters: 66, Total loss: 0.327, Loss x: 0.108, Loss s: 0.045, Loss w_fp: 0.016,  Loss contrast: 1.358, Mask ratio: 0.985
+[2025-05-19 21:47:20,020][    INFO] Iters: 77, Total loss: 0.325, Loss x: 0.106, Loss s: 0.043, Loss w_fp: 0.015,  Loss contrast: 1.352, Mask ratio: 0.986
+[2025-05-19 21:47:26,185][    INFO] Iters: 88, Total loss: 0.325, Loss x: 0.112, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.347, Mask ratio: 0.986
+[2025-05-19 21:48:14,169][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.27,IoU1:99.27
+[2025-05-19 21:48:14,169][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.90,IoU1:72.86
+[2025-05-19 21:48:14,169][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.08, MeanIoU1: 86.06
+
+[2025-05-19 21:48:14,234][    INFO] ===========> Epoch: 56, LR: 0.00169, Previous best: 87.47
+[2025-05-19 21:48:15,358][    INFO] Iters: 0, Total loss: 0.351, Loss x: 0.096, Loss s: 0.093, Loss w_fp: 0.010,  Loss contrast: 1.458, Mask ratio: 0.982
+[2025-05-19 21:48:21,612][    INFO] Iters: 11, Total loss: 0.346, Loss x: 0.122, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.431, Mask ratio: 0.987
+[2025-05-19 21:48:27,876][    INFO] Iters: 22, Total loss: 0.348, Loss x: 0.127, Loss s: 0.039, Loss w_fp: 0.013,  Loss contrast: 1.431, Mask ratio: 0.988
+[2025-05-19 21:48:33,973][    INFO] Iters: 33, Total loss: 0.337, Loss x: 0.125, Loss s: 0.036, Loss w_fp: 0.012,  Loss contrast: 1.387, Mask ratio: 0.989
+[2025-05-19 21:48:40,081][    INFO] Iters: 44, Total loss: 0.333, Loss x: 0.126, Loss s: 0.035, Loss w_fp: 0.012,  Loss contrast: 1.363, Mask ratio: 0.989
+[2025-05-19 21:48:46,258][    INFO] Iters: 55, Total loss: 0.330, Loss x: 0.126, Loss s: 0.035, Loss w_fp: 0.013,  Loss contrast: 1.352, Mask ratio: 0.988
+[2025-05-19 21:48:52,088][    INFO] Iters: 66, Total loss: 0.320, Loss x: 0.123, Loss s: 0.037, Loss w_fp: 0.017,  Loss contrast: 1.298, Mask ratio: 0.987
+[2025-05-19 21:48:58,281][    INFO] Iters: 77, Total loss: 0.319, Loss x: 0.122, Loss s: 0.037, Loss w_fp: 0.018,  Loss contrast: 1.299, Mask ratio: 0.987
+[2025-05-19 21:49:04,522][    INFO] Iters: 88, Total loss: 0.321, Loss x: 0.118, Loss s: 0.037, Loss w_fp: 0.017,  Loss contrast: 1.314, Mask ratio: 0.987
+[2025-05-19 21:49:52,408][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.37,IoU1:99.37
+[2025-05-19 21:49:52,409][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 81.27,IoU1:74.93
+[2025-05-19 21:49:52,409][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.32, MeanIoU1: 87.15
+
+[2025-05-19 21:49:52,441][    INFO] ===========> Epoch: 57, LR: 0.00163, Previous best: 87.47
+[2025-05-19 21:49:53,431][    INFO] Iters: 0, Total loss: 0.037, Loss x: 0.048, Loss s: 0.041, Loss w_fp: 0.048,  Loss contrast: 0.000, Mask ratio: 0.963
+[2025-05-19 21:49:59,742][    INFO] Iters: 11, Total loss: 0.316, Loss x: 0.112, Loss s: 0.038, Loss w_fp: 0.019,  Loss contrast: 1.300, Mask ratio: 0.982
+[2025-05-19 21:50:05,883][    INFO] Iters: 22, Total loss: 0.313, Loss x: 0.107, Loss s: 0.032, Loss w_fp: 0.014,  Loss contrast: 1.305, Mask ratio: 0.986
+[2025-05-19 21:50:11,933][    INFO] Iters: 33, Total loss: 0.308, Loss x: 0.115, Loss s: 0.034, Loss w_fp: 0.015,  Loss contrast: 1.262, Mask ratio: 0.985
+[2025-05-19 21:50:18,096][    INFO] Iters: 44, Total loss: 0.316, Loss x: 0.116, Loss s: 0.033, Loss w_fp: 0.014,  Loss contrast: 1.302, Mask ratio: 0.986
+[2025-05-19 21:50:24,032][    INFO] Iters: 55, Total loss: 0.310, Loss x: 0.112, Loss s: 0.036, Loss w_fp: 0.014,  Loss contrast: 1.276, Mask ratio: 0.986
+[2025-05-19 21:50:30,155][    INFO] Iters: 66, Total loss: 0.310, Loss x: 0.111, Loss s: 0.037, Loss w_fp: 0.014,  Loss contrast: 1.277, Mask ratio: 0.985
+[2025-05-19 21:50:36,185][    INFO] Iters: 77, Total loss: 0.306, Loss x: 0.109, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.263, Mask ratio: 0.986
+[2025-05-19 21:50:42,446][    INFO] Iters: 88, Total loss: 0.306, Loss x: 0.107, Loss s: 0.034, Loss w_fp: 0.014,  Loss contrast: 1.269, Mask ratio: 0.986
+[2025-05-19 21:51:30,284][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.33,IoU1:99.33
+[2025-05-19 21:51:30,284][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.53,IoU1:74.28
+[2025-05-19 21:51:30,284][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.93, MeanIoU1: 86.81
+
+[2025-05-19 21:51:30,320][    INFO] ===========> Epoch: 58, LR: 0.00157, Previous best: 87.47
+[2025-05-19 21:51:31,412][    INFO] Iters: 0, Total loss: 0.333, Loss x: 0.100, Loss s: 0.021, Loss w_fp: 0.008,  Loss contrast: 1.438, Mask ratio: 0.994
+[2025-05-19 21:51:37,367][    INFO] Iters: 11, Total loss: 0.265, Loss x: 0.100, Loss s: 0.038, Loss w_fp: 0.017,  Loss contrast: 1.068, Mask ratio: 0.986
+[2025-05-19 21:51:43,628][    INFO] Iters: 22, Total loss: 0.305, Loss x: 0.111, Loss s: 0.039, Loss w_fp: 0.017,  Loss contrast: 1.244, Mask ratio: 0.984
+[2025-05-19 21:51:49,729][    INFO] Iters: 33, Total loss: 0.314, Loss x: 0.108, Loss s: 0.036, Loss w_fp: 0.016,  Loss contrast: 1.302, Mask ratio: 0.986
+[2025-05-19 21:51:55,871][    INFO] Iters: 44, Total loss: 0.311, Loss x: 0.103, Loss s: 0.033, Loss w_fp: 0.015,  Loss contrast: 1.298, Mask ratio: 0.987
+[2025-05-19 21:52:02,080][    INFO] Iters: 55, Total loss: 0.317, Loss x: 0.108, Loss s: 0.033, Loss w_fp: 0.015,  Loss contrast: 1.324, Mask ratio: 0.987
+[2025-05-19 21:52:08,106][    INFO] Iters: 66, Total loss: 0.315, Loss x: 0.104, Loss s: 0.033, Loss w_fp: 0.015,  Loss contrast: 1.317, Mask ratio: 0.987
+[2025-05-19 21:52:14,478][    INFO] Iters: 77, Total loss: 0.318, Loss x: 0.106, Loss s: 0.032, Loss w_fp: 0.014,  Loss contrast: 1.333, Mask ratio: 0.988
+[2025-05-19 21:52:20,579][    INFO] Iters: 88, Total loss: 0.317, Loss x: 0.106, Loss s: 0.032, Loss w_fp: 0.014,  Loss contrast: 1.329, Mask ratio: 0.988
+[2025-05-19 21:53:08,359][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 21:53:08,359][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.76,IoU1:73.12
+[2025-05-19 21:53:08,359][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.02, MeanIoU1: 86.20
+
+[2025-05-19 21:53:08,392][    INFO] ===========> Epoch: 59, LR: 0.00150, Previous best: 87.47
+[2025-05-19 21:53:09,496][    INFO] Iters: 0, Total loss: 0.331, Loss x: 0.098, Loss s: 0.015, Loss w_fp: 0.011,  Loss contrast: 1.434, Mask ratio: 0.989
+[2025-05-19 21:53:15,688][    INFO] Iters: 11, Total loss: 0.340, Loss x: 0.110, Loss s: 0.058, Loss w_fp: 0.015,  Loss contrast: 1.408, Mask ratio: 0.987
+[2025-05-19 21:53:21,848][    INFO] Iters: 22, Total loss: 0.341, Loss x: 0.114, Loss s: 0.053, Loss w_fp: 0.015,  Loss contrast: 1.409, Mask ratio: 0.988
+[2025-05-19 21:53:27,982][    INFO] Iters: 33, Total loss: 0.330, Loss x: 0.108, Loss s: 0.049, Loss w_fp: 0.015,  Loss contrast: 1.373, Mask ratio: 0.988
+[2025-05-19 21:53:34,282][    INFO] Iters: 44, Total loss: 0.333, Loss x: 0.107, Loss s: 0.046, Loss w_fp: 0.016,  Loss contrast: 1.391, Mask ratio: 0.987
+[2025-05-19 21:53:40,434][    INFO] Iters: 55, Total loss: 0.329, Loss x: 0.107, Loss s: 0.044, Loss w_fp: 0.016,  Loss contrast: 1.372, Mask ratio: 0.987
+[2025-05-19 21:53:46,640][    INFO] Iters: 66, Total loss: 0.331, Loss x: 0.110, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.379, Mask ratio: 0.988
+[2025-05-19 21:53:52,755][    INFO] Iters: 77, Total loss: 0.331, Loss x: 0.108, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.383, Mask ratio: 0.988
+[2025-05-19 21:53:58,857][    INFO] Iters: 88, Total loss: 0.329, Loss x: 0.107, Loss s: 0.043, Loss w_fp: 0.015,  Loss contrast: 1.374, Mask ratio: 0.988
+[2025-05-19 21:54:47,041][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.29,IoU1:99.29
+[2025-05-19 21:54:47,041][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.80,IoU1:73.34
+[2025-05-19 21:54:47,042][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.04, MeanIoU1: 86.31
+
+[2025-05-19 21:54:47,075][    INFO] ===========> Epoch: 60, LR: 0.00144, Previous best: 87.47
+[2025-05-19 21:54:48,211][    INFO] Iters: 0, Total loss: 0.316, Loss x: 0.064, Loss s: 0.016, Loss w_fp: 0.020,  Loss contrast: 1.414, Mask ratio: 0.990
+[2025-05-19 21:54:54,304][    INFO] Iters: 11, Total loss: 0.321, Loss x: 0.114, Loss s: 0.044, Loss w_fp: 0.021,  Loss contrast: 1.313, Mask ratio: 0.989
+[2025-05-19 21:55:00,471][    INFO] Iters: 22, Total loss: 0.321, Loss x: 0.123, Loss s: 0.037, Loss w_fp: 0.017,  Loss contrast: 1.305, Mask ratio: 0.986
+[2025-05-19 21:55:06,576][    INFO] Iters: 33, Total loss: 0.310, Loss x: 0.114, Loss s: 0.039, Loss w_fp: 0.018,  Loss contrast: 1.263, Mask ratio: 0.984
+[2025-05-19 21:55:12,773][    INFO] Iters: 44, Total loss: 0.315, Loss x: 0.109, Loss s: 0.037, Loss w_fp: 0.017,  Loss contrast: 1.304, Mask ratio: 0.985
+[2025-05-19 21:55:18,768][    INFO] Iters: 55, Total loss: 0.307, Loss x: 0.104, Loss s: 0.038, Loss w_fp: 0.016,  Loss contrast: 1.273, Mask ratio: 0.986
+[2025-05-19 21:55:24,757][    INFO] Iters: 66, Total loss: 0.302, Loss x: 0.103, Loss s: 0.038, Loss w_fp: 0.016,  Loss contrast: 1.251, Mask ratio: 0.986
+[2025-05-19 21:55:30,745][    INFO] Iters: 77, Total loss: 0.298, Loss x: 0.102, Loss s: 0.036, Loss w_fp: 0.016,  Loss contrast: 1.236, Mask ratio: 0.987
+[2025-05-19 21:55:37,127][    INFO] Iters: 88, Total loss: 0.305, Loss x: 0.107, Loss s: 0.036, Loss w_fp: 0.015,  Loss contrast: 1.262, Mask ratio: 0.987
+[2025-05-19 21:56:25,960][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.34,IoU1:99.34
+[2025-05-19 21:56:25,961][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.74,IoU1:74.77
+[2025-05-19 21:56:25,961][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.04, MeanIoU1: 87.05
+
+[2025-05-19 21:56:25,993][    INFO] ===========> Epoch: 61, LR: 0.00137, Previous best: 87.47
+[2025-05-19 21:56:27,153][    INFO] Iters: 0, Total loss: 0.326, Loss x: 0.082, Loss s: 0.028, Loss w_fp: 0.005,  Loss contrast: 1.432, Mask ratio: 0.997
+[2025-05-19 21:56:33,314][    INFO] Iters: 11, Total loss: 0.338, Loss x: 0.106, Loss s: 0.033, Loss w_fp: 0.015,  Loss contrast: 1.429, Mask ratio: 0.990
+[2025-05-19 21:56:39,649][    INFO] Iters: 22, Total loss: 0.339, Loss x: 0.105, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.430, Mask ratio: 0.988
+[2025-05-19 21:56:45,944][    INFO] Iters: 33, Total loss: 0.340, Loss x: 0.124, Loss s: 0.040, Loss w_fp: 0.021,  Loss contrast: 1.391, Mask ratio: 0.987
+[2025-05-19 21:56:51,990][    INFO] Iters: 44, Total loss: 0.327, Loss x: 0.119, Loss s: 0.041, Loss w_fp: 0.019,  Loss contrast: 1.335, Mask ratio: 0.987
+[2025-05-19 21:56:58,270][    INFO] Iters: 55, Total loss: 0.333, Loss x: 0.125, Loss s: 0.039, Loss w_fp: 0.019,  Loss contrast: 1.356, Mask ratio: 0.987
+[2025-05-19 21:57:04,269][    INFO] Iters: 66, Total loss: 0.329, Loss x: 0.121, Loss s: 0.038, Loss w_fp: 0.018,  Loss contrast: 1.344, Mask ratio: 0.988
+[2025-05-19 21:57:10,433][    INFO] Iters: 77, Total loss: 0.330, Loss x: 0.119, Loss s: 0.038, Loss w_fp: 0.019,  Loss contrast: 1.355, Mask ratio: 0.987
+[2025-05-19 21:57:16,355][    INFO] Iters: 88, Total loss: 0.320, Loss x: 0.116, Loss s: 0.038, Loss w_fp: 0.018,  Loss contrast: 1.314, Mask ratio: 0.987
+[2025-05-19 21:58:04,389][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.32,IoU1:99.32
+[2025-05-19 21:58:04,389][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.88,IoU1:74.17
+[2025-05-19 21:58:04,389][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.10, MeanIoU1: 86.75
+
+[2025-05-19 21:58:04,453][    INFO] ===========> Epoch: 62, LR: 0.00131, Previous best: 87.47
+[2025-05-19 21:58:05,621][    INFO] Iters: 0, Total loss: 0.035, Loss x: 0.052, Loss s: 0.054, Loss w_fp: 0.015,  Loss contrast: 0.000, Mask ratio: 0.987
+[2025-05-19 21:58:11,763][    INFO] Iters: 11, Total loss: 0.318, Loss x: 0.116, Loss s: 0.043, Loss w_fp: 0.015,  Loss contrast: 1.298, Mask ratio: 0.986
+[2025-05-19 21:58:17,840][    INFO] Iters: 22, Total loss: 0.316, Loss x: 0.115, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.295, Mask ratio: 0.987
+[2025-05-19 21:58:23,913][    INFO] Iters: 33, Total loss: 0.312, Loss x: 0.108, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.290, Mask ratio: 0.988
+[2025-05-19 21:58:30,186][    INFO] Iters: 44, Total loss: 0.323, Loss x: 0.118, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.328, Mask ratio: 0.987
+[2025-05-19 21:58:36,444][    INFO] Iters: 55, Total loss: 0.328, Loss x: 0.118, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.347, Mask ratio: 0.987
+[2025-05-19 21:58:42,497][    INFO] Iters: 66, Total loss: 0.323, Loss x: 0.113, Loss s: 0.039, Loss w_fp: 0.014,  Loss contrast: 1.336, Mask ratio: 0.987
+[2025-05-19 21:58:48,583][    INFO] Iters: 77, Total loss: 0.321, Loss x: 0.109, Loss s: 0.040, Loss w_fp: 0.014,  Loss contrast: 1.330, Mask ratio: 0.986
+[2025-05-19 21:58:54,529][    INFO] Iters: 88, Total loss: 0.320, Loss x: 0.112, Loss s: 0.040, Loss w_fp: 0.014,  Loss contrast: 1.323, Mask ratio: 0.987
+[2025-05-19 21:59:42,551][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.35,IoU1:99.35
+[2025-05-19 21:59:42,551][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.20,IoU1:74.62
+[2025-05-19 21:59:42,551][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.78, MeanIoU1: 86.99
+
+[2025-05-19 21:59:42,585][    INFO] ===========> Epoch: 63, LR: 0.00124, Previous best: 87.47
+[2025-05-19 21:59:43,877][    INFO] Iters: 0, Total loss: 0.308, Loss x: 0.065, Loss s: 0.029, Loss w_fp: 0.011,  Loss contrast: 1.368, Mask ratio: 0.991
+[2025-05-19 21:59:49,934][    INFO] Iters: 11, Total loss: 0.309, Loss x: 0.112, Loss s: 0.023, Loss w_fp: 0.009,  Loss contrast: 1.289, Mask ratio: 0.992
+[2025-05-19 21:59:56,061][    INFO] Iters: 22, Total loss: 0.321, Loss x: 0.107, Loss s: 0.029, Loss w_fp: 0.011,  Loss contrast: 1.349, Mask ratio: 0.990
+[2025-05-19 22:00:02,233][    INFO] Iters: 33, Total loss: 0.329, Loss x: 0.112, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.372, Mask ratio: 0.989
+[2025-05-19 22:00:08,350][    INFO] Iters: 44, Total loss: 0.324, Loss x: 0.108, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.352, Mask ratio: 0.988
+[2025-05-19 22:00:14,364][    INFO] Iters: 55, Total loss: 0.322, Loss x: 0.109, Loss s: 0.035, Loss w_fp: 0.014,  Loss contrast: 1.341, Mask ratio: 0.988
+[2025-05-19 22:00:20,383][    INFO] Iters: 66, Total loss: 0.322, Loss x: 0.112, Loss s: 0.041, Loss w_fp: 0.014,  Loss contrast: 1.333, Mask ratio: 0.987
+[2025-05-19 22:00:26,505][    INFO] Iters: 77, Total loss: 0.317, Loss x: 0.109, Loss s: 0.041, Loss w_fp: 0.014,  Loss contrast: 1.312, Mask ratio: 0.987
+[2025-05-19 22:00:32,546][    INFO] Iters: 88, Total loss: 0.314, Loss x: 0.109, Loss s: 0.043, Loss w_fp: 0.015,  Loss contrast: 1.296, Mask ratio: 0.987
+[2025-05-19 22:01:20,557][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.28,IoU1:99.28
+[2025-05-19 22:01:20,557][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 83.07,IoU1:73.22
+[2025-05-19 22:01:20,557][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.17, MeanIoU1: 86.25
+
+[2025-05-19 22:01:20,619][    INFO] ===========> Epoch: 64, LR: 0.00118, Previous best: 87.47
+[2025-05-19 22:01:21,946][    INFO] Iters: 0, Total loss: 0.338, Loss x: 0.081, Loss s: 0.036, Loss w_fp: 0.015,  Loss contrast: 1.475, Mask ratio: 0.986
+[2025-05-19 22:01:28,138][    INFO] Iters: 11, Total loss: 0.307, Loss x: 0.087, Loss s: 0.035, Loss w_fp: 0.015,  Loss contrast: 1.310, Mask ratio: 0.984
+[2025-05-19 22:01:34,313][    INFO] Iters: 22, Total loss: 0.323, Loss x: 0.093, Loss s: 0.049, Loss w_fp: 0.016,  Loss contrast: 1.364, Mask ratio: 0.982
+[2025-05-19 22:01:40,408][    INFO] Iters: 33, Total loss: 0.317, Loss x: 0.096, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.336, Mask ratio: 0.985
+[2025-05-19 22:01:46,589][    INFO] Iters: 44, Total loss: 0.321, Loss x: 0.098, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.356, Mask ratio: 0.986
+[2025-05-19 22:01:52,794][    INFO] Iters: 55, Total loss: 0.323, Loss x: 0.105, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.346, Mask ratio: 0.986
+[2025-05-19 22:01:59,013][    INFO] Iters: 66, Total loss: 0.327, Loss x: 0.110, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.359, Mask ratio: 0.986
+[2025-05-19 22:02:05,213][    INFO] Iters: 77, Total loss: 0.326, Loss x: 0.111, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.351, Mask ratio: 0.986
+[2025-05-19 22:02:11,295][    INFO] Iters: 88, Total loss: 0.325, Loss x: 0.112, Loss s: 0.042, Loss w_fp: 0.016,  Loss contrast: 1.343, Mask ratio: 0.986
+[2025-05-19 22:02:59,686][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.37,IoU1:99.37
+[2025-05-19 22:02:59,687][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.28,IoU1:75.30
+[2025-05-19 22:02:59,687][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.83, MeanIoU1: 87.34
+
+[2025-05-19 22:02:59,775][    INFO] ===========> Epoch: 65, LR: 0.00111, Previous best: 87.47
+[2025-05-19 22:03:01,035][    INFO] Iters: 0, Total loss: 0.294, Loss x: 0.031, Loss s: 0.018, Loss w_fp: 0.023,  Loss contrast: 1.368, Mask ratio: 0.987
+[2025-05-19 22:03:07,266][    INFO] Iters: 11, Total loss: 0.320, Loss x: 0.118, Loss s: 0.032, Loss w_fp: 0.016,  Loss contrast: 1.318, Mask ratio: 0.983
+[2025-05-19 22:03:13,273][    INFO] Iters: 22, Total loss: 0.327, Loss x: 0.105, Loss s: 0.053, Loss w_fp: 0.017,  Loss contrast: 1.355, Mask ratio: 0.983
+[2025-05-19 22:03:19,397][    INFO] Iters: 33, Total loss: 0.322, Loss x: 0.105, Loss s: 0.049, Loss w_fp: 0.016,  Loss contrast: 1.333, Mask ratio: 0.985
+[2025-05-19 22:03:25,638][    INFO] Iters: 44, Total loss: 0.319, Loss x: 0.105, Loss s: 0.043, Loss w_fp: 0.015,  Loss contrast: 1.326, Mask ratio: 0.987
+[2025-05-19 22:03:31,722][    INFO] Iters: 55, Total loss: 0.318, Loss x: 0.107, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.320, Mask ratio: 0.987
+[2025-05-19 22:03:37,821][    INFO] Iters: 66, Total loss: 0.317, Loss x: 0.108, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.316, Mask ratio: 0.987
+[2025-05-19 22:03:43,942][    INFO] Iters: 77, Total loss: 0.319, Loss x: 0.106, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.330, Mask ratio: 0.987
+[2025-05-19 22:03:50,098][    INFO] Iters: 88, Total loss: 0.318, Loss x: 0.104, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.327, Mask ratio: 0.987
+[2025-05-19 22:04:38,453][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.34,IoU1:99.34
+[2025-05-19 22:04:38,454][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.57,IoU1:74.56
+[2025-05-19 22:04:38,454][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 90.95, MeanIoU1: 86.95
+
+[2025-05-19 22:04:38,488][    INFO] ===========> Epoch: 66, LR: 0.00104, Previous best: 87.47
+[2025-05-19 22:04:39,865][    INFO] Iters: 0, Total loss: 0.303, Loss x: 0.046, Loss s: 0.027, Loss w_fp: 0.007,  Loss contrast: 1.391, Mask ratio: 0.992
+[2025-05-19 22:04:45,941][    INFO] Iters: 11, Total loss: 0.304, Loss x: 0.077, Loss s: 0.052, Loss w_fp: 0.015,  Loss contrast: 1.299, Mask ratio: 0.987
+[2025-05-19 22:04:51,852][    INFO] Iters: 22, Total loss: 0.273, Loss x: 0.097, Loss s: 0.041, Loss w_fp: 0.015,  Loss contrast: 1.116, Mask ratio: 0.989
+[2025-05-19 22:04:57,873][    INFO] Iters: 33, Total loss: 0.280, Loss x: 0.103, Loss s: 0.042, Loss w_fp: 0.015,  Loss contrast: 1.135, Mask ratio: 0.988
+[2025-05-19 22:05:04,203][    INFO] Iters: 44, Total loss: 0.297, Loss x: 0.110, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.212, Mask ratio: 0.988
+[2025-05-19 22:05:10,445][    INFO] Iters: 55, Total loss: 0.307, Loss x: 0.110, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.259, Mask ratio: 0.988
+[2025-05-19 22:05:16,605][    INFO] Iters: 66, Total loss: 0.312, Loss x: 0.111, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.284, Mask ratio: 0.988
+[2025-05-19 22:05:22,847][    INFO] Iters: 77, Total loss: 0.314, Loss x: 0.113, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.288, Mask ratio: 0.989
+[2025-05-19 22:05:28,909][    INFO] Iters: 88, Total loss: 0.310, Loss x: 0.112, Loss s: 0.038, Loss w_fp: 0.015,  Loss contrast: 1.274, Mask ratio: 0.988
+[2025-05-19 22:06:16,363][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.31,IoU1:99.31
+[2025-05-19 22:06:16,363][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 83.27,IoU1:74.11
+[2025-05-19 22:06:16,363][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.29, MeanIoU1: 86.71
+
+[2025-05-19 22:06:16,425][    INFO] ===========> Epoch: 67, LR: 0.00098, Previous best: 87.47
+[2025-05-19 22:06:17,648][    INFO] Iters: 0, Total loss: 0.307, Loss x: 0.058, Loss s: 0.024, Loss w_fp: 0.014,  Loss contrast: 1.384, Mask ratio: 0.987
+[2025-05-19 22:06:23,641][    INFO] Iters: 11, Total loss: 0.302, Loss x: 0.093, Loss s: 0.030, Loss w_fp: 0.013,  Loss contrast: 1.283, Mask ratio: 0.985
+[2025-05-19 22:06:29,931][    INFO] Iters: 22, Total loss: 0.324, Loss x: 0.107, Loss s: 0.040, Loss w_fp: 0.015,  Loss contrast: 1.353, Mask ratio: 0.986
+[2025-05-19 22:06:36,196][    INFO] Iters: 33, Total loss: 0.328, Loss x: 0.104, Loss s: 0.039, Loss w_fp: 0.015,  Loss contrast: 1.378, Mask ratio: 0.987
+[2025-05-19 22:06:41,991][    INFO] Iters: 44, Total loss: 0.303, Loss x: 0.103, Loss s: 0.034, Loss w_fp: 0.015,  Loss contrast: 1.263, Mask ratio: 0.988
+[2025-05-19 22:06:48,200][    INFO] Iters: 55, Total loss: 0.307, Loss x: 0.107, Loss s: 0.035, Loss w_fp: 0.015,  Loss contrast: 1.270, Mask ratio: 0.988
+[2025-05-19 22:06:54,479][    INFO] Iters: 66, Total loss: 0.312, Loss x: 0.106, Loss s: 0.034, Loss w_fp: 0.015,  Loss contrast: 1.299, Mask ratio: 0.987
+[2025-05-19 22:07:00,535][    INFO] Iters: 77, Total loss: 0.313, Loss x: 0.108, Loss s: 0.036, Loss w_fp: 0.016,  Loss contrast: 1.298, Mask ratio: 0.987
+[2025-05-19 22:07:06,545][    INFO] Iters: 88, Total loss: 0.313, Loss x: 0.107, Loss s: 0.039, Loss w_fp: 0.016,  Loss contrast: 1.296, Mask ratio: 0.987
+[2025-05-19 22:07:54,142][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.30,IoU1:99.30
+[2025-05-19 22:07:54,143][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.90,IoU1:73.60
+[2025-05-19 22:07:54,143][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.10, MeanIoU1: 86.45
+
+[2025-05-19 22:07:54,175][    INFO] ===========> Epoch: 68, LR: 0.00091, Previous best: 87.47
+[2025-05-19 22:07:55,417][    INFO] Iters: 0, Total loss: 0.315, Loss x: 0.063, Loss s: 0.020, Loss w_fp: 0.017,  Loss contrast: 1.413, Mask ratio: 0.992
+[2025-05-19 22:08:01,352][    INFO] Iters: 11, Total loss: 0.290, Loss x: 0.097, Loss s: 0.035, Loss w_fp: 0.035,  Loss contrast: 1.185, Mask ratio: 0.989
+[2025-05-19 22:08:07,277][    INFO] Iters: 22, Total loss: 0.293, Loss x: 0.109, Loss s: 0.039, Loss w_fp: 0.024,  Loss contrast: 1.182, Mask ratio: 0.990
+[2025-05-19 22:08:13,350][    INFO] Iters: 33, Total loss: 0.302, Loss x: 0.112, Loss s: 0.043, Loss w_fp: 0.022,  Loss contrast: 1.218, Mask ratio: 0.988
+[2025-05-19 22:08:19,515][    INFO] Iters: 44, Total loss: 0.304, Loss x: 0.108, Loss s: 0.045, Loss w_fp: 0.020,  Loss contrast: 1.239, Mask ratio: 0.988
+[2025-05-19 22:08:25,574][    INFO] Iters: 55, Total loss: 0.303, Loss x: 0.112, Loss s: 0.047, Loss w_fp: 0.019,  Loss contrast: 1.223, Mask ratio: 0.988
+[2025-05-19 22:08:31,623][    INFO] Iters: 66, Total loss: 0.299, Loss x: 0.109, Loss s: 0.045, Loss w_fp: 0.019,  Loss contrast: 1.213, Mask ratio: 0.988
+[2025-05-19 22:08:37,918][    INFO] Iters: 77, Total loss: 0.305, Loss x: 0.107, Loss s: 0.044, Loss w_fp: 0.023,  Loss contrast: 1.245, Mask ratio: 0.987
+[2025-05-19 22:08:43,937][    INFO] Iters: 88, Total loss: 0.304, Loss x: 0.109, Loss s: 0.045, Loss w_fp: 0.022,  Loss contrast: 1.234, Mask ratio: 0.987
+[2025-05-19 22:09:31,527][    INFO] ***** Evaluation ***** >>>> Class [0 background] IoU: 99.24,IoU1:99.24
+[2025-05-19 22:09:31,527][    INFO] ***** Evaluation ***** >>>> Class [1 kongfeng] IoU: 82.78,IoU1:72.32
+[2025-05-19 22:09:31,527][    INFO] ***** Evaluation original ***** >>>> MeanIoU: 91.01, MeanIoU1: 85.78
+
+[2025-05-19 22:09:31,561][    INFO] ===========> Epoch: 69, LR: 0.00084, Previous best: 87.47
+[2025-05-19 22:09:32,821][    INFO] Iters: 0, Total loss: 0.365, Loss x: 0.152, Loss s: 0.031, Loss w_fp: 0.006,  Loss contrast: 1.482, Mask ratio: 0.995
+[2025-05-19 22:09:38,874][    INFO] Iters: 11, Total loss: 0.311, Loss x: 0.098, Loss s: 0.034, Loss w_fp: 0.016,  Loss contrast: 1.308, Mask ratio: 0.990
+[2025-05-19 22:09:45,082][    INFO] Iters: 22, Total loss: 0.330, Loss x: 0.113, Loss s: 0.043, Loss w_fp: 0.016,  Loss contrast: 1.367, Mask ratio: 0.988
+[2025-05-19 22:09:51,254][    INFO] Iters: 33, Total loss: 0.328, Loss x: 0.121, Loss s: 0.036, Loss w_fp: 0.015,  Loss contrast: 1.347, Mask ratio: 0.989
+[2025-05-19 22:09:57,391][    INFO] Iters: 44, Total loss: 0.322, Loss x: 0.112, Loss s: 0.037, Loss w_fp: 0.015,  Loss contrast: 1.331, Mask ratio: 0.989
+[2025-05-19 22:10:03,649][    INFO] Iters: 55, Total loss: 0.320, Loss x: 0.112, Loss s: 0.037, Loss w_fp: 0.015,  Loss contrast: 1.326, Mask ratio: 0.989
