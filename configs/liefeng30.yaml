@@ -1,0 +1,37 @@
+# arguments for dataset
+dataset: liefeng30
+nclass: 2
+crop_size: 420
+data_root: "./Data/liefeng2"
+
+# arguments for training
+epochs: 80
+batch_size: 3 # per GPU x 4 GPUs
+lr: 0.005
+lr_multi: 10.0
+#lr: 0.0001
+#lr_multi: 1.0
+
+#criterion:
+#  name: CELoss
+#  kwargs:
+#    ignore_index: 255
+#conf_thresh: 0.80
+
+criterion: #损失函数的配置
+  name: OHEM #损失函数名称
+  kwargs: #损失函数的额外参数
+    ignore_index: 255 # 在计算损失时忽略的类别索引，通常用于处理无效区域
+    thresh: 0.80 #OHEM 中用于选择困难样本的阈值
+    min_kept: 90000 #OHEM 中每张图像最少保留的样本数量
+conf_thresh: 0.80 #置信度阈值，用于确定预测的置信度，这里设置为0，可能表示不使用此阈值或在后续处理中设置
+
+# arguments for model
+#model: deeplabv3plus
+#model: pspnet
+model: unet
+#model: DNA-Net
+backbone: xception
+replace_stride_with_dilation: [ False, False, True ]
+dilations: [ 6, 12, 18 ]
+#dilations: [12, 24, 48]
