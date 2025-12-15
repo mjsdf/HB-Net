@@ -17,7 +17,7 @@ def denormalize(img):
 
 class SemanticContrast(nn.Module):
     def __init__(self, temp=0.7, entropy_weight=0.85, margin=0.3, patch_sizes=[105],
-                 gray_threshold=(33, 150), entropy_threshold=(3.6, 6.0), crack_threshold=(10, 100), num_classes=2,
+                 gray_threshold=(30, 150), entropy_threshold=(3.6, 6.0), crack_threshold=(10, 100), num_classes=2,
                  max_samples_per_class=3000, ohem_thresh=0.7, ohem_min_kept=3500,
                  use_dynamic_temp=True, temp_base=0.7, temp_scale=0.5,
                  temp_center=0.5):
@@ -261,4 +261,5 @@ class SemanticContrast(nn.Module):
             total_loss /= len(valid_features)
         else:
             total_loss = torch.tensor(0.0, device=device)
+
         return total_loss
