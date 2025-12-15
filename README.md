@@ -1,9 +1,9 @@
-# HB-Net：Semi-Supervised Micro-Pore Segmentation for Heterogeneous Shale SEM Images
+# Shale Micropore Structure Identification Under Data Scarcity: A Heterogeneity-Aware Semi-Supervised Approach
 
 ## Basic Project Information
 
 - **Program Name**: HB-Net
-- **Paper Title**: Semi-Supervised Micro-Pore Segmentation for Heterogeneous Shale SEM Images
+- **Paper Title**: Shale Micropore Structure Identification Under Data Scarcity: A Heterogeneity-Aware Semi-Supervised Approach
 - **Author Information**: 
   - First Author：Peigang Liu,School of Computer Science and Technology, China University of Petroleum (East China), Qingdao 266580, China,
   - Corresponding Author：Peigang Liu
@@ -12,7 +12,7 @@
 - **Code Repository Address**: https://github.com/mjsdf/HB-Net
 
 ## Project Overview
-This project implements a semi-supervised learning-based semantic segmentation model (HB-Net), which is built on the UNet architecture and integrated with the UniMatch semi-supervised framework. It can efficiently handle semantic segmentation tasks in scenarios with limited annotated data (such as crack detection in geological images). The code supports distributed training and includes complete modules for dataset processing, model training, performance validation, and result testing, featuring excellent reproducibility, scalability, and maintainability.
+This project implements a semi-supervised learning-based semantic segmentation model (HB-Net), which is built on the U-Net architecture and integrated with the UniMatch semi-supervised framework. It can efficiently handle semantic segmentation tasks in scenarios with limited annotated data (such as crack detection in geological images). The code supports distributed training and includes complete modules for dataset processing, model training, performance validation, and result testing, featuring excellent reproducibility, scalability, and maintainability.
 <p align="left">
 <img src="./docs/framework.png" width=90% height=90% 
 class="center">
